@@ -1,0 +1,48 @@
+.homeBtn:hover .homeDrop {
+  display: block;
+
+}
+.homeDrop:hover {
+  display: block;
+}
+/*  */
+.megaMenuBtn:hover .megaMenuDrop {
+  display: block;
+
+}
+.megaMenuDrop:hover {
+  display: block;
+}
+/*  */
+.pagesBtn:hover .pagesDrop {
+  display: block;
+
+}
+.pagesDrop:hover {
+  display: block;
+}
+/*  */
+.userAccBtn:hover .userAccDrop {
+  display: block;
+
+}
+.userAccDrop:hover {
+  display: block;
+}
+/*  */
+.vendAccBtn:hover .vendAccDrop {
+  display: block;
+
+}
+.vendAccDrop:hover {
+  display: block;
+}
+/*  */
+.fullScreenMenuBtn:hover .fullScreenMenuDrop {
+  display: block;
+  
+
+}
+.fullScreenMenuDrop:hover {
+  display: block;
+}
