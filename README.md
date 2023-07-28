@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# This project not ready working on it ....
+# This project not ready working on it .....
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
