@@ -1,7 +1,7 @@
 import { BiLogoFacebook } from "react-icons/bi";
 import { CgTwitter, CgYoutube } from "react-icons/cg";
 import {
-  AiOutlineInstagram,
+  
   AiOutlineGoogle,
   AiFillInstagram,
 } from "react-icons/ai";
@@ -183,19 +183,19 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="flex flex-row gap-4">
-                <a className="bg-slate-800 cursor-pointer rounded-full p-2 hover:bg-[#212733] duration-500">
+                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
                   <BiLogoFacebook />
                 </a>
-                <a className="bg-slate-800 cursor-pointer rounded-full p-2 hover:bg-[#212733] duration-500">
+                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
                   <CgTwitter />
                 </a>
-                <a className="bg-slate-800 cursor-pointer rounded-full p-2 hover:bg-[#212733] duration-500">
+                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
                   <CgYoutube />
                 </a>
-                <a className="bg-slate-800 cursor-pointer rounded-full p-2 hover:bg-[#212733] duration-500">
+                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
                   <AiOutlineGoogle />
                 </a>
-                <a className="bg-slate-800 cursor-pointer rounded-full p-2 hover:bg-[#212733] duration-500">
+                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
                   <AiFillInstagram />
                 </a>
               </li>

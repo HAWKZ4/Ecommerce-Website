@@ -1,0 +1,13 @@
+.Sale:hover .circle {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1) translateY(-50%);
+  /* top: 38px; */
+}
+
+.circle:not(:hover) {
+  transition: all 0.2s ease-in-out;
+  /* top: 50%;
+  left: 240px */
+  /* top: 18px; */
+
+}

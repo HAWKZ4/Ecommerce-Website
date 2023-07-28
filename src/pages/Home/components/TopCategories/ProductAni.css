@@ -1,0 +1,27 @@
+.product:hover .quickShow {
+  display: block;
+}
+.product:hover .imgPro {
+  transform: scale(1.1);
+}
+
+/* For Icons  */
+.product:hover .cartIcon {
+  right: 0;
+  transition: all ease-in-out 0.2s;
+}
+.product:hover .HeartIcon {
+  right: 0;
+  transition: all ease-in-out 0.2s;
+  transition-delay: 0.1s;
+}
+.product:not(hover) .cartIcon {
+  right: -40px;
+  transition: all ease-in-out 0.2s;
+}
+.product:not(hover) .HeartIcon {
+  right: -40px;
+  transition: all ease-in-out 0.2s;
+  transition-delay: 0.1s;
+}
+

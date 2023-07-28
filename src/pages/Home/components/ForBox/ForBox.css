@@ -1,0 +1,18 @@
+.button:hover .borderB {
+  transition: all ease-in-out 0.3s;
+  transform: translateX(0);
+}
+
+.button:not(hover) .borderB {
+  transition: all ease-in-out 0.3s;
+  transform: translateX(-110px);
+}
+
+.forBox:hover img {
+  transform: scale(1.1);
+  transition: all ease-in-out 0.2s;
+}
+.forBox:not(hover) img {
+  transform: scale(1);
+  transition: all ease-in-out 0.2s;
+}
