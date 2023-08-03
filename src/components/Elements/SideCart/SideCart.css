@@ -1,0 +1,6 @@
+/* hide scrollbar for Chrome, Safari, and Opera */
+.products::-webkit-scrollbar {
+  display: none;
+  
+  scrollbar-width: none;
+}

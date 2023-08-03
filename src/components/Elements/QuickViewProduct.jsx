@@ -1,7 +1,6 @@
-import React from "react";
 import { SliderForProduct } from "./SliderForProduct";
-import { Stars } from "./Stars";
 import {AiOutlineClose} from "react-icons/ai"
+import { Rating } from "./Rating";
 
 export const QuickViewProduct = () => {
   return (
@@ -23,7 +22,7 @@ export const QuickViewProduct = () => {
               $140.00
             </p>
             <div className="stars">
-              <Stars />
+              <Rating  />
             </div>
             <p className="my-4 text-main_text">
               Sed egestas, ante et vulputate volutpat, eros pede semper est,

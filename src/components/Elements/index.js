@@ -1,5 +1,7 @@
 export { Login } from "./Login";
-export { Cart } from "./Cart";
+export { SideCartItem } from "./SideCartItem";
 export { QuickViewProduct } from "./QuickViewProduct";
 export { SliderForProduct } from "./SliderForProduct";
-export { Stars } from "./Stars";
+export { Rating } from "./Rating";
+export { SideCart } from "./SideCart/SideCart";
+export { ProductCartF } from "./ProductCartF";

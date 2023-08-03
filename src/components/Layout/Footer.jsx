@@ -11,17 +11,17 @@ export const Footer = () => {
     <footer className="bg-white dark:bg-gray-900 py-10 ">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
         <div className=" grid grid-cols-4 mx-auto w-full gap-8 max-w-screen-xl p-4 py-6 lg:py-8">
-          <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
+          <div className="mb-6 md:mb-0 ">
+            <a href="#" className="flex items-center">
               <img
                 src="	https://bazaar.ui-lib.com/assets/images/logo.svg"
                 className="h-8 mr-3 transform scale-150 ml-2.5
           }"
-                alt="FlowBite Logo"
+                alt="Logo"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
             </a>
-            <div className="w-[290px] mt-10 dark:text-white ">
+            <div className=" mt-10 dark:text-white ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
               libero id et, in gravida. Sit diam duis mauris nulla cursus.
             </div>
@@ -89,7 +89,7 @@ export const Footer = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="https://flowbite.com/" className="hover:underline">
+                <a href="#" className="hover:underline">
                   Careers
                 </a>
               </li>
@@ -122,7 +122,7 @@ export const Footer = () => {
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
                 <a
-                  href="https://github.com/themesberg/flowbite"
+                  href=""
                   className="hover:underline "
                 >
                   Help Center

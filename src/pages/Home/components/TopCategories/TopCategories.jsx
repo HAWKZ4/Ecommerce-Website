@@ -30,8 +30,8 @@ export const TopCategories = () => {
               </div>
 
               <div className="buttons flex justify-between absolute bottom-4 gap-2">
-                <TopCategoriesButton />
-                <TopCategoriesButton />
+                <TopCategoriesButton text={"Women's"} />
+                <TopCategoriesButton text={"Men's"}/>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export const TopCategories = () => {
               />
             </div>
             <div className=" absolute bottom-4 left-1/2 -translate-x-1/2">
-              <TopCategoriesButton />
+              <TopCategoriesButton text={"Women's T-shirt"} />
             </div>
           </div>
           <div className="productB relative ">
@@ -58,7 +58,7 @@ export const TopCategories = () => {
               />
             </div>
             <div className=" absolute bottom-4 left-1/2 -translate-x-1/2">
-              <TopCategoriesButton />
+              <TopCategoriesButton text={"Men's T-shirt"} />
             </div>
           </div>
         </div>

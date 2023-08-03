@@ -1,8 +1,21 @@
-
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 export const SearchBar = () => {
+
+  const navigate = useNavigate()
+  const searchRef = useRef()
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/products?q=${searchRef.current.value}`)
+    
+  }
+
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="flex">
           <label
             htmlFor="search-dropdown"
@@ -66,11 +79,13 @@ export const SearchBar = () => {
               />
             </svg>
             <input
-              type="search"
+              type="text"
+              name="search"
               id="search-dropdown"
               className="pl-10 w-96 relative block p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-l-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
               placeholder="Search"
               required
+              ref={searchRef}
             />
             <button
               id="dropdown-button"

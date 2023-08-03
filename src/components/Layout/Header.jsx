@@ -4,11 +4,12 @@ import { CgDarkMode } from "react-icons/cg";
 import { SearchBar } from "../../pages/Home/components/SearchBar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Login } from "../Elements";
+import { Login, SideCart } from "../Elements";
+import { useSelector } from "react-redux";
 import "./Header.css";
 
 export const Header = () => {
-  // Manage dropdowns
+  // handle Dropdowns
   const [categories, setCategories] = useState(false);
 
   // Manage Login form
@@ -18,6 +19,13 @@ export const Header = () => {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("dark")) || false
   );
+
+  // Handle SideCart
+  const [sideCart , setSideCart] = useState(false)
+
+  // Handle cart items nums
+  const products = useSelector(state => state.cartState.cartList)
+
 
   useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(darkMode));
@@ -31,6 +39,7 @@ export const Header = () => {
 
   return (
     <header className="flex flex-col container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
+        <SideCart sideCart={sideCart} setSideCart={setSideCart}/>
       <div className="header flex flex-row justify-between items-center">
         <div className="logo">
           <Link to="/">
@@ -67,12 +76,13 @@ export const Header = () => {
           <button
             type="button"
             className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onClick={()=> setSideCart(!sideCart)}
           >
             <MdOutlineShoppingBag size={20}/>
 
             <span className="sr-only">Notifications</span>
             <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
-              20
+              {products.length}
             </div>
           </button>
         </div>
