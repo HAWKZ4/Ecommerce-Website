@@ -1,7 +1,7 @@
 # Full E-Commerce Website
 # This project not ready for use it's under development 
 
-## You can see some picture of this project
+## Some picture of this project
 
 ![1](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/5668174e-13f4-4107-8a44-d30e3e34f42d)
 ![2](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/7eef1b89-cb79-49ae-baf0-df272bffecd8)
