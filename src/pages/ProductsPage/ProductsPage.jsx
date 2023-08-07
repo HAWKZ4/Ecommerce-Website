@@ -1,42 +1,74 @@
 import { useEffect, useState } from "react";
-import { AiOutlineStar, AiFillStar, AiTwotoneStar } from "react-icons/ai";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
-import { BsFillGrid3X3GapFill, BsHeart } from "react-icons/bs";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaThList } from "react-icons/fa";
 import { ProductCardG } from "./ProductCardG";
-import { useLocation } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import { addAllProducts } from "../../store/cartSlice";
+import { useSelector } from "react-redux";
+import { featureProducts, clearFilter, sort } from "../../store/filterSlice";
+import { rate } from "../../store/filterSlice";
+
 
 export const ProductsPage = () => {
+
+  const [products, setProducts] = useState([])
+
   // handle bathPrepDropdown
   const [bathPrepDropdown, setBathPrepDropdown] = useState("");
 
   // handle Dropdown
-  const [sortByDropdown, setSortByDropdown] = useState("");
+  const [sortByDropdown, setSortByDropdown] = useState(false);
 
   // manage products
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
 
   // manage numbers of results
   const [numberOfResults, setNumberOfResults] = useState(0)
 
-
-  const search = useLocation().search;
-  const searchTerm = new URLSearchParams(search).get("q")
+  const dispatch = useDispatch()
 
 
+  // const { filteredProducts, sort , rate , featureProducts} = useSelector((state) => state.filterState)
 
+
+
+  //      const response = await fetch(`http://localhost:8000/products?title_like=${searchTerm}`);
+
+
+  const filteredProducts = useSelector(state => state.filterState.filteredProducts)
+  const featuredValue = useSelector(state => state.filterState.featured)
+
+  const radios = document.getElementsByName("rating")
+
+
+  // const ratedValue = useSelector(state => state.filterState.rating)
 
 
   useEffect(() => {
-    async function fetchProducts() {
-      const response = await fetch(`http://localhost:8000/products?title_like=${searchTerm}`);
-      const data = await response.json();
-      setNumberOfResults(data.length)
-      // console.log(data);
-      setProducts(data);
-    }
-    fetchProducts();
-  }, [searchTerm]);
+    setProducts(filteredProducts)
+  })
+
+  const handleClear = () => {
+    dispatch(clearFilter())
+    radios.forEach(function (radio) {
+      radio.checked = false
+    })
+  }
+
+  const handleLowToHigh=()=>{
+    dispatch(sort("lowToHigh"))
+    document.getElementById("dropdownButton").textContent=document.getElementById("lowToHigh").textContent
+    setSortByDropdown(!sortByDropdown)
+  }
+  const handleHighToLow=()=>{
+    dispatch(sort("highToLow"))
+    document.getElementById("dropdownButton").textContent=document.getElementById("highToLow").textContent
+
+    setSortByDropdown(!sortByDropdown)
+  }
 
 
 
@@ -44,17 +76,17 @@ export const ProductsPage = () => {
     <main className="productsPage  container bg-pro_det_bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
       <section className="resultDetail bg-white flex flex-row justify-between items-center py-4 px-8">
         <div className="left flex flex-col">
-          <p>Searching for “ {searchTerm} ”</p>
-          <p>{numberOfResults} results found</p>
+          <p>Searching for “ { } ”</p>
+          <p>{filteredProducts.length} results found</p>
         </div>
         <div className="right flex items-center">
           <div className="sortBy flex items-center mr-6  ">
             <span className="mr-2">Sort by: </span>
-            <div className="dropdown">
+            <div className="dropdown relative">
               <button
-                id="dropdownDefaultButton"
+                id="dropdownButton"
                 data-dropdown-toggle="dropdown"
-                className=" relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
                 onClick={() => setSortByDropdown(!sortByDropdown)}
               >
@@ -74,50 +106,50 @@ export const ProductsPage = () => {
                     d="m1 1 4 4 4-4"
                   />
                 </svg>
+              </button>
+
                 <div
                   id="dropdown"
                   className={`z-10  ${sortByDropdown ? "block" : "hidden"
                     } absolute top-[42px] left-1/2 -translate-x-1/2  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
                 >
                   <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    className="py-2 text-sm text-gray-700 dark:text-gray-200 text-center"
                     aria-labelledby="dropdownDefaultButton"
                   >
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Relevance
-                      </a>
+                    <li
+                      className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+
+                      Relevance
+
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Date
-                      </a>
+                    <li
+                      className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+
+
+                      Date
+
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Price Low to High
-                      </a>
+                    <li
+                    id={"lowToHigh"}
+                      onClick={handleLowToHigh} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+
+                      Price Low to High
+
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Price High to Low
-                      </a>
+                    <li
+                    id={"highToLow"}
+                      onClick={handleHighToLow} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+
+                      Price High to Low
+
                     </li>
                   </ul>
                 </div>
-              </button>
               {/* <!-- Dropdown menu --> */}
             </div>
           </div>
@@ -177,7 +209,7 @@ export const ProductsPage = () => {
               <div
                 id="dropdown"
                 className={`z-10 ${bathPrepDropdown ? "block" : "hidden"
-                  }  bg-white   w-44 dark:bg-gray-700`}
+                  }  bg-transparent   w-44 `}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -254,13 +286,13 @@ export const ProductsPage = () => {
               <div className="brandsCon  ">
                 <div className="flex items-center mb-2">
                   <input
-                    id="default-checkbox"
+                    id="macc"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="default-checkbox"
+                    htmlFor="macc"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Macc
@@ -268,13 +300,13 @@ export const ProductsPage = () => {
                 </div>
                 <div className="flex items-center mb-2">
                   <input
-                    id="checked-checkbox"
+                    id="karts"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="checked-checkbox"
+                    htmlFor="karts"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Karts
@@ -282,13 +314,13 @@ export const ProductsPage = () => {
                 </div>
                 <div className="flex items-center mb-2">
                   <input
-                    id="default-checkbox"
+                    id="baals"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="default-checkbox"
+                    htmlFor="baals"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Baals
@@ -296,13 +328,13 @@ export const ProductsPage = () => {
                 </div>
                 <div className="flex items-center mb-2">
                   <input
-                    id="checked-checkbox"
+                    id="bukks"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="checked-checkbox"
+                    htmlFor="bukks"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Bukks
@@ -310,13 +342,13 @@ export const ProductsPage = () => {
                 </div>
                 <div className="flex items-center mb-2">
                   <input
-                    id="checked-checkbox"
+                    id="luasis"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="checked-checkbox"
+                    htmlFor="luasis"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Luasis
@@ -327,13 +359,13 @@ export const ProductsPage = () => {
               <div className="state">
                 <div className="flex items-center mb-2">
                   <input
-                    id="checked-checkbox"
+                    id="six"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="checked-checkbox"
+                    htmlFor="six"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     On Sale
@@ -341,13 +373,13 @@ export const ProductsPage = () => {
                 </div>
                 <div className="flex items-center mb-2">
                   <input
-                    id="checked-checkbox"
+                    id="seven"
                     type="checkbox"
                     value=""
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
-                    htmlFor="checked-checkbox"
+                    htmlFor="seven"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     In Stock
@@ -355,13 +387,15 @@ export const ProductsPage = () => {
                 </div>
                 <div className="flex items-center mb-2">
                   <input
-                    id="checked-checkbox"
+                    id="eight"
                     type="checkbox"
                     value=""
+                    checked={featuredValue}
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    onChange={() => dispatch(featureProducts(!featuredValue))}
                   />
                   <label
-                    htmlFor="checked-checkbox"
+                    htmlFor="eight"
                     className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Featured
@@ -374,13 +408,17 @@ export const ProductsPage = () => {
                 <div className="ratingCon">
                   <div className="5Stars flex mb-2">
                     <input
-                      id="checked-checkbox"
-                      type="checkbox"
+                      id="five"
+                      type="radio"
+
+                      name="rating"
                       value=""
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      onChange={() => dispatch(rate("5Stars"))}
                     />
                     <label
-                      htmlFor="checked-checkbox"
+                      htmlFor="five"
+
                       className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex justify-center items-center gap-1"
                     >
                       <AiFillStar className="text-stars_c" />
@@ -392,13 +430,16 @@ export const ProductsPage = () => {
                   </div>
                   <div className="4Stars flex mb-2">
                     <input
-                      id="checked-checkbox"
-                      type="checkbox"
+                      id="four"
+                      type="radio"
+
+                      name="rating"
                       value=""
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      onChange={() => dispatch(rate("4Stars"))}
                     />
                     <label
-                      htmlFor="checked-checkbox"
+                      htmlFor="four"
                       className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex justify-center items-center gap-1"
                     >
                       <AiFillStar className="text-stars_c" />
@@ -410,13 +451,16 @@ export const ProductsPage = () => {
                   </div>
                   <div className="3Stars flex mb-2">
                     <input
-                      id="checked-checkbox"
-                      type="checkbox"
+                      id="three"
+                      type="radio"
+
+                      name="rating"
                       value=""
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      onChange={() => dispatch(rate("3Stars"))}
                     />
                     <label
-                      htmlFor="checked-checkbox"
+                      htmlFor="three"
                       className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex justify-center items-center gap-1"
                     >
                       <AiFillStar className="text-stars_c" />
@@ -429,13 +473,16 @@ export const ProductsPage = () => {
                   </div>
                   <div className="2Stars flex mb-2">
                     <input
-                      id="checked-checkbox"
-                      type="checkbox"
+                      id="two"
+                      type="radio"
+
+                      name="rating"
                       value=""
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      onChange={() => dispatch(rate("2Stars"))}
                     />
                     <label
-                      htmlFor="checked-checkbox"
+                      htmlFor="two"
                       className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex justify-center items-center gap-1"
                     >
                       <AiFillStar className="text-stars_c" />
@@ -447,13 +494,16 @@ export const ProductsPage = () => {
                   </div>
                   <div className="1Star flex mb-2">
                     <input
-                      id="checked-checkbox"
-                      type="checkbox"
+                      id="one"
+                      type="radio"
+
+                      name="rating"
                       value=""
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      onChange={() => dispatch(rate("1Star"))}
                     />
                     <label
-                      htmlFor="checked-checkbox"
+                      htmlFor="one"
                       className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex justify-center items-center gap-1"
                     >
                       <AiFillStar className="text-stars_c" />
@@ -476,6 +526,7 @@ export const ProductsPage = () => {
                     <span className="rounded-full w-6 h-6 mr-2 cursor-pointer bg-blue-200"></span>
                     <span className="rounded-full w-6 h-6 mr-2 cursor-pointer bg-purple-200"></span>
                   </div>
+                  <button onClick={handleClear} className="clear text-white bg-gray-500 py-2 px-8 rounde-md mt-4">Clear Filters</button>
                 </div>
               </div>
             </div>

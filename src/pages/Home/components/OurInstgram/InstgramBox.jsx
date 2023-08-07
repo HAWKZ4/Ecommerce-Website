@@ -11,7 +11,7 @@ export const InstgramBox = ({ product }) => {
       <div className="instagramIcon absolute text-transparent left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[5] rotate-180">
         <AiOutlineInstagram />
       </div>
-      <img className="h-[190.4px] w-full p-6" src={image} alt={title} />
+      <img className="h-[156.8px] w-full " src={image} alt={title} />
     </div>
   )
 }

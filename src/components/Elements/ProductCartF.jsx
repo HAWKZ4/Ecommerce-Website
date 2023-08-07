@@ -4,7 +4,7 @@ import { LiaCartPlusSolid } from "react-icons/lia"
 import { Link } from "react-router-dom";
 import { Rating } from "./Rating";
 import { useDispatch ,useSelector} from "react-redux";
-import { add, remove } from "../../store/cartSlice";
+import { addProduct, removeProduct } from "../../store/cartSlice";
 import { BsFillCartXFill } from "react-icons/bs";
 
 
@@ -41,11 +41,11 @@ export const ProductCartF = ({ product }) => {
           />
         </Link>
         <div className="quickShow absolute hidden bg-[#222222] w-full bottom-0 py-[10px] px-8 hover:bg-[#343434] duration-500 text-center text-white ">
-          <p>Quick View</p>
+          <p className="cursor-pointer">Quick View</p>
         </div>
-        {inCartList ? (<div onClick={() => dispatch(remove(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
+        {inCartList ? (<div onClick={() => dispatch(removeProduct(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
           <BsFillCartXFill />
-        </div>) : (<div onClick={() => dispatch(add(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
+        </div>) : (<div onClick={() => dispatch(addProduct(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
           <LiaCartPlusSolid />
         </div>)}
 

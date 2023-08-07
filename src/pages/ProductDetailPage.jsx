@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Rating } from "../components/Elements";
 import girl from "../images/girlBox.jpg";
 import { useEffect, useState } from "react";
-import { add } from "../store/cartSlice";
+import { add, addProduct } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -150,7 +150,7 @@ export const ProductDetailPage = () => {
           </div>
           <h2 className="text-main_c font-bold  text-[25px]">${price}</h2>
           <p className="mb-4">Stock Available</p>
-          <button disabled={inCartList} onClick={() => dispatch(add(product))} className={`${inCartList ? "cursor-not-allowed	" : ""} bg-main_c text-white mb-8 px-10 py-2 rounded-md`}>
+          <button disabled={inCartList} onClick={() => dispatch(addProduct(product))} className={`${inCartList ? "cursor-not-allowed	" : ""} bg-main_c text-white mb-8 px-10 py-2 rounded-md`}>
             Add To Cart
           </button>
           <p>

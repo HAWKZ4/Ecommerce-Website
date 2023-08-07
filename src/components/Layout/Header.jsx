@@ -4,7 +4,7 @@ import { CgDarkMode } from "react-icons/cg";
 import { SearchBar } from "../../pages/Home/components/SearchBar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Login, SideCart } from "../Elements";
+import { UserLoggedOut, SideCart, UserLoggedIn } from "../Elements";
 import { useSelector } from "react-redux";
 import "./Header.css";
 
@@ -15,13 +15,14 @@ export const Header = () => {
   // Manage Login form
   const [login, setLogin] = useState(false);
 
+
   // Handle Dark mode
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("dark")) || false
   );
 
   // Handle SideCart
-  const [sideCart , setSideCart] = useState(false)
+  const [sideCart, setSideCart] = useState(false)
 
   // Handle cart items nums
   const products = useSelector(state => state.cartState.cartList)
@@ -37,9 +38,12 @@ export const Header = () => {
     }
   }, [darkMode]);
 
+  const token = sessionStorage.getItem("token")
+
+
   return (
     <header className="flex flex-col container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
-        <SideCart sideCart={sideCart} setSideCart={setSideCart}/>
+      <SideCart sideCart={sideCart} setSideCart={setSideCart} />
       <div className="header flex flex-row justify-between items-center">
         <div className="logo">
           <Link to="/">
@@ -52,7 +56,7 @@ export const Header = () => {
           </Link>
         </div>
         <div className="serach ">
-          <SearchBar  />
+          <SearchBar />
         </div>
         <div className="icons flex w-48 justify-between">
           <button
@@ -60,25 +64,27 @@ export const Header = () => {
             className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => setDarkMode(!darkMode)}
           >
-            <CgDarkMode size={20}/>
+            <CgDarkMode size={20} />
 
 
           </button>
-          <button 
+          <div className="relative">
+          <button
             type="button"
-            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={()=> setLogin(!login)}
+            className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onClick={() => setLogin(!login)}
           >
             <RxAvatar size={20} />
-            
-          </button>
 
+          </button>
+          {login && (token ? <UserLoggedIn setLogin={setLogin}/> : ""  )}
+          </div>
           <button
             type="button"
             className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={()=> setSideCart(!sideCart)}
+            onClick={() => setSideCart(!sideCart)}
           >
-            <MdOutlineShoppingBag size={20}/>
+            <MdOutlineShoppingBag size={20} />
 
             <span className="sr-only">Notifications</span>
             <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
@@ -87,15 +93,15 @@ export const Header = () => {
           </button>
         </div>
       </div>
-      {login && (<Login/>) }
-    
+      {login && (token ? "": <UserLoggedOut setLogin={setLogin} /> )}
+
       {/* Header section 2 */}
       <div className="Header_SEC_2 pt-10 pb-4 flex flex-row items-center justify-between">
         <div className="left">
           <button
             id="multiLevelDropdownButton"
             data-dropdown-toggle="dropdown"
-            className="text-white relative bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className=" relative  bg-gray-100 text-main_text  focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-left inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
             onClick={() => setCategories(!categories)}
           >
@@ -113,14 +119,14 @@ export const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="m1 1 4 4 4-4"
+                className="text-main_text dark:text-white"
               />
             </svg>
             {/* <!-- Dropdown menu --> For Categories */}
             <div
               id="dropdown"
-              className={`z-10 top-[45px] left-0 ${
-                categories ? "block" : "hidden"
-              } absolute  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
+              className={`z-10 top-[45px] left-0 ${categories ? "block" : "hidden"
+                } absolute  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
             >
               <ul
                 className="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -232,7 +238,7 @@ export const Header = () => {
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            className="homeBtn text-white relative bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="homeBtn  relative text-main_text bg-white focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             Home
@@ -249,6 +255,7 @@ export const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="m1 1 4 4 4-4"
+                className="text-main_text dark:text-white"
               />
             </svg>
             {/* <!-- Dropdown menu --> */}
@@ -302,7 +309,7 @@ export const Header = () => {
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            className="megaMenuBtn relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="megaMenuBtn relative text-main_text bg-white  focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             Mega Menu
@@ -319,6 +326,7 @@ export const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="m1 1 4 4 4-4"
+                className="text-main_text dark:text-white"
               />
             </svg>
             {/* <!-- Dropdown menu --> */}
@@ -371,7 +379,7 @@ export const Header = () => {
             <button
               id="mega-menu-full-dropdown-button"
               data-collapse-toggle="mega-menu-full-dropdown"
-              className="fullScreenMenuBtn relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="fullScreenMenuBtn relative text-main_text bg-white  focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Full Screen Menu
               <svg
@@ -387,6 +395,7 @@ export const Header = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="m1 1 4 4 4-4"
+                  className="text-main_text dark:text-white"
                 />
               </svg>
               {/* Mega */}
@@ -522,7 +531,7 @@ export const Header = () => {
           <button
             id="multiLevelDropdownButton"
             data-dropdown-toggle="dropdown"
-            className="pagesBtn relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="pagesBtn relative text-main_text bg-white   focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             Pages
@@ -539,6 +548,7 @@ export const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="m1 1 4 4 4-4"
+                className="text-main_text dark:text-white"
               />
             </svg>
             {/* <!-- Dropdown menu --> */}
@@ -651,7 +661,7 @@ export const Header = () => {
           <button
             id="multiLevelDropdownButton"
             data-dropdown-toggle="dropdown"
-            className="userAccBtn relative  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="userAccBtn relative  text-main_text bg-white focus:outline-none  font-medium rounded-lg text-sm px-5 text-center inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             User Account
@@ -661,6 +671,7 @@ export const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 10 6"
+              
             >
               <path
                 stroke="currentColor"
@@ -668,6 +679,7 @@ export const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="m1 1 4 4 4-4"
+                className="text-main_text dark:text-white"
               />
             </svg>
             {/* <!-- Dropdown menu --> */}
@@ -780,7 +792,7 @@ export const Header = () => {
           <button
             id="multiLevelDropdownButton"
             data-dropdown-toggle="dropdown"
-            className="vendAccBtn relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="vendAccBtn relative text-main_text bg-white  focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             Vendor Account
@@ -797,6 +809,7 @@ export const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="m1 1 4 4 4-4"
+                className="text-main_text dark:text-white"
               />
             </svg>
             {/* <!-- Dropdown menu --> */}

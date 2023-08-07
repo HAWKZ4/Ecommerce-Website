@@ -12,7 +12,7 @@ export const Slide = () => {
           <div className="flex flex-row justify-between items-center">
             <div className="left pl-10">
               <h2 className="text-white text-3xl uppercase mb-2 font-normal">Lifestyle collection</h2>
-              <p className="text-white uppercase text-6xl font-bold">Men</p>
+              <p className="text-white uppercase text-6xl font-bold mb-2">Men</p>
               <p className="text-white uppercase mb-3 font-semibold text-3xl">SALE UP TO <span className="text-[#D23F57] ">30% off</span></p>
               <p className="text-white mb-8 leading-7 text-lg">Get Free Shipping on orders over $99.00</p>
               <button className="text-white py-[10px] px-[40px] hover:bg-[#343434] transition duration-500 bg-[#222222]  font-bold">Shop Now</button>

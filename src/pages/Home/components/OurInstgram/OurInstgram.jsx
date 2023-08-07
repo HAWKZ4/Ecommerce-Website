@@ -2,22 +2,28 @@
 import { useState, useEffect } from "react";
 import { InstgramBox } from "./InstgramBox";
 import "./OurInstgram.css";
+import { useSelector } from "react-redux";
 
 export const OurInstgram = () => {
 
 
   // manage the products
-  const [products, setProducts] = useState([])
+  // const [products, setProducts] = useState([])
 
-  useEffect(() => {
-    async function getProducts() {
-      const response = await fetch("http://localhost:8000/instgram")
-      const data = await response.json()
-      console.log(data)
-      setProducts(data)
-    }
-    getProducts()
-  }, [])
+  const products = useSelector(state => state.cartState.allProducts)
+
+  const instgramImages= products.filter((product)=> product.instgram)
+
+
+
+  // useEffect(() => {
+  //   async function getProducts() {
+  //     const response = await fetch("http://localhost:8000/instgram")
+  //     const data = await response.json()
+  //     setProducts(data)
+  //   }
+  //   getProducts()
+  // }, [])
 
 
   return (
@@ -27,7 +33,7 @@ export const OurInstgram = () => {
       </h1>
       <div className="instgramBoxes grid grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-3">
 
-        {products.map((product) => (
+        {instgramImages.map((product) => (
           <InstgramBox key={product.id} product={product} />
         ))}
 

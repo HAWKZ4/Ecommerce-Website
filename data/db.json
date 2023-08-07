@@ -9,6 +9,7 @@
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "brand": "Maxima",
       "company_name": "Maximus Innovations",
+      "best_selling": true,
       "rating": {
         "rate": 3.9,
         "count": 120
@@ -23,6 +24,7 @@
       "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
       "brand": "Synapse",
       "company_name": "Synthetix Enterprises",
+      "best_selling": true,
       "rating": {
         "rate": 4.1,
         "count": 259
@@ -37,6 +39,7 @@
       "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
       "brand": "Omni",
       "company_name": "Quantum Leap Technologies",
+      "best_selling": true,
       "rating": {
         "rate": 4.7,
         "count": 500
@@ -51,6 +54,7 @@
       "brand": "InnoTech",
       "company_name": "Fusion Enterprises",
       "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "best_selling": true,
       "rating": {
         "rate": 2.1,
         "count": 430
@@ -63,6 +67,7 @@
       "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
       "category": "jewelery",
       "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "best_selling": true,
       "brand": "Lumina",
       "company_name": "NovaWorks",
       "rating": {
@@ -79,6 +84,7 @@
       "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Helix",
       "company_name": "Vertex Solutions",
+      "best_selling": true,
       "rating": {
         "rate": 3.9,
         "count": 70
@@ -93,6 +99,7 @@
       "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Novus",
       "company_name": "Aether Inc.",
+      "best_selling": true,
       "rating": {
         "rate": 3,
         "count": 400
@@ -107,13 +114,14 @@
       "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Helix",
       "company_name": "Vertex Solutions",
+      "best_selling": true,
       "rating": {
         "rate": 1.9,
         "count": 100
       }
     }
   ],
-  "featured_products": [
+  "featured_product": [
     {
       "id": 9,
       "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
@@ -181,6 +189,7 @@
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "brand": "Maxima",
       "company_name": "Maximus Innovations",
+      "best_selling": true,
       "rating": {
         "rate": 3.9,
         "count": 120
@@ -195,6 +204,7 @@
       "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
       "brand": "Synapse",
       "company_name": "Synthetix Enterprises",
+      "best_selling": true,
       "rating": {
         "rate": 4.1,
         "count": 259
@@ -209,6 +219,7 @@
       "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
       "brand": "Omni",
       "company_name": "Quantum Leap Technologies",
+      "best_selling": true,
       "rating": {
         "rate": 4.7,
         "count": 500
@@ -222,6 +233,7 @@
       "category": "men's clothing",
       "brand": "InnoTech",
       "company_name": "Fusion Enterprises",
+      "best_selling": true,
       "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
       "rating": {
         "rate": 2.1,
@@ -237,6 +249,7 @@
       "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Lumina",
       "company_name": "NovaWorks",
+      "best_selling": true,
       "rating": {
         "rate": 4.6,
         "count": 400
@@ -251,6 +264,7 @@
       "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Helix",
       "company_name": "Vertex Solutions",
+      "best_selling": true,
       "rating": {
         "rate": 3.9,
         "count": 70
@@ -265,6 +279,7 @@
       "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Novus",
       "company_name": "Aether Inc.",
+      "best_selling": true,
       "rating": {
         "rate": 3,
         "count": 400
@@ -279,6 +294,7 @@
       "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
       "brand": "Helix",
       "company_name": "Vertex Solutions",
+      "best_selling": true,
       "rating": {
         "rate": 1.9,
         "count": 100
@@ -293,6 +309,7 @@
       "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
       "brand": "Lumina",
       "company_name": "NovaWorks",
+      "featured_product": true,
       "rating": {
         "rate": 3.3,
         "count": 203
@@ -307,6 +324,7 @@
       "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
       "brand": "InnoTech",
       "company_name": "Fusion Enterprises",
+      "featured_product": true,
       "rating": {
         "rate": 2.9,
         "count": 470
@@ -321,6 +339,7 @@
       "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
       "brand": "Nexus",
       "company_name": "Neoteric Solutions",
+      "featured_product": true,
       "rating": {
         "rate": 4.8,
         "count": 319
@@ -335,6 +354,7 @@
       "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
       "brand": "Axiom",
       "company_name": "Axis Enterprises",
+      "featured_product": true,
       "rating": {
         "rate": 4.8,
         "count": 400
@@ -349,6 +369,7 @@
       "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
       "brand": "Zenith",
       "company_name": "Zenith Enterprises",
+      "instgram": true,
       "rating": {
         "rate": 2.9,
         "count": 250
@@ -363,6 +384,7 @@
       "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
       "brand": "Cygnus",
       "company_name": "Cygnus Innovations",
+      "instgram": true,
       "rating": {
         "rate": 2.2,
         "count": 140
@@ -377,6 +399,7 @@
       "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
       "brand": "Kinesis",
       "company_name": "Kinetic Dynamics",
+      "instgram": true,
       "rating": {
         "rate": 2.6,
         "count": 235
@@ -391,6 +414,7 @@
       "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
       "brand": "Synergy",
       "company_name": "Synergenix Solutions",
+      "instgram": true,
       "rating": {
         "rate": 2.9,
         "count": 340
@@ -405,6 +429,7 @@
       "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
       "brand": "Eureka",
       "company_name": "Eureka Enterprises",
+      "instgram": true,
       "rating": {
         "rate": 3.8,
         "count": 679
@@ -419,6 +444,7 @@
       "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
       "brand": "Velocity",
       "company_name": "Velocity Innovations",
+      "instgram": true,
       "rating": {
         "rate": 4.7,
         "count": 130
@@ -537,6 +563,107 @@
         "rate": 4.7,
         "count": 130
       }
+    }
+  ],
+  "users": [
+    {
+      "email": "your.email+fakedata74347@gmail.com",
+      "password": "$2a$10$zeIPey47D7MZlufI0yPw7.3zUnAldff.nSJKd8/d.Nl8o1MrSyvRq",
+      "conPassword": "J5XSyJ3Mqpk__T4",
+      "fName": "Keyon",
+      "lName": "Homenick",
+      "phoneNum": "794-475-3559",
+      "id": 1
+    },
+    {
+      "email": "your.email+fakedata51407@gmail.com",
+      "password": "$2a$10$hQzjZNt9YUWYzBy7U9K5Nun6/BLgNNVFOi0MIw7yzh4aK16Le3onG",
+      "conPassword": "Uijd5XadUXKMoEe",
+      "fName": "Fidel",
+      "lName": "Pfannerstill",
+      "phoneNum": "801-659-8920",
+      "id": 2
+    },
+    {
+      "email": "your.email+fakedata37981@gmail.com",
+      "password": "$2a$10$jHIVv0MsRG5HLJ1W2KExNOAyF8C0QoFJa4npciTlax39tBtXAjrP.",
+      "conPassword": "vQuL5t13dhDpKIc",
+      "fName": "Bailey",
+      "lName": "Kutch",
+      "phoneNum": "809-070-2025",
+      "id": 3
+    },
+    {
+      "email": "your.email+fakedata91305@gmail.com",
+      "password": "$2a$10$Lwm3JUdGJZ1BBeBfVld03OLZF527TFEYb3Bep0qU/VPJ3Y6H3.1zy",
+      "conPassword": "zRFabq8ffEm2FK0",
+      "fName": "Harley",
+      "lName": "Lehner",
+      "phoneNum": "1231231232",
+      "id": 4
+    },
+    {
+      "email": "your.email+fakedata15905@gmail.com",
+      "password": "$2a$10$a74PPWVvdQmbGR.O4zlhx.yNk8dkjeJ2STDEPcclid6VwyLr8Rsum",
+      "conPassword": "Q1sCTkPrpQOh0Az",
+      "fName": "Efrain",
+      "lName": "Kozey",
+      "phoneNum": "0876800553",
+      "id": 5
+    },
+    {
+      "email": "your.email+fakedata46315@gmail.com",
+      "password": "$2a$10$sOIp5NiihcbrRQ7tR82.HOb.tD7wLk1HdlkdzuSPzX.x9R6GXgz1O",
+      "conPassword": "CuQDtussaiSVNxf",
+      "fName": "Omari",
+      "lName": "Corkery",
+      "phoneNum": "1846550089",
+      "id": 6
+    },
+    {
+      "email": "your.email+fakedata91361@gmail.com",
+      "password": "$2a$10$I4V.O.dZLnoCS4PMSRAm7uL9/uwIO1IkwsVe1DDxYnv2umne9a.F6",
+      "conPassword": "ESPNgO2pXeV4Zy3",
+      "fName": "Amelia",
+      "lName": "Dietrich",
+      "phoneNum": "3327460919",
+      "id": 7
+    },
+    {
+      "email": "your.email+fakedata47284@gmail.com",
+      "password": "$2a$10$i2KgRqG3ibLtKsUIuXbVGe65HsS7hxZ6R8yMIvCbD7JvNHUjq2..G",
+      "conPassword": "JX3MmEocjaDrQzx",
+      "fName": "Joshua",
+      "lName": "Bashirian",
+      "phoneNum": "7144558725",
+      "id": 8
+    },
+    {
+      "email": "your.email+fakedata43995@gmail.com",
+      "password": "$2a$10$ZTO.irAnbzBNoGzQidJonOgkBtYi7uOpm1G0igoW3fy8qLT3ZcENS",
+      "conPassword": "p_HLB69yX6qgiAC",
+      "fName": "Sammy",
+      "lName": "Volkman",
+      "phoneNum": "1546955229",
+      "id": 9
+    },
+    {
+      "email": "your.email+fakedata97175@gmail.com",
+      "password": "$2a$10$K9wV3JUrIfWMZCZNijKQzejviZmD7u0yTC.cipOiq0s/TvSblUV.a",
+      "conPassword": "XXVk31ShF8oFujG",
+      "fName": "Stephan",
+      "lName": "Raynor",
+      "phoneNum": "3632213390",
+      "id": 10
+    },
+    {
+      "email": "moh@example.com",
+      "password": "$2a$10$2UQ0sKdYpTrDHQDrwqa5yuISPpZlSzqBjgYiMBKRjoOoLlZLMJjC6",
+      "conPassword": "123123123",
+      "fName": "moh",
+      "lName": "als",
+      "phoneNum": "1231231231",
+      "id": 11
     }
   ]
 }

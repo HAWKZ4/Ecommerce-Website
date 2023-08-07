@@ -1,15 +1,22 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { search } from "../../../store/filterSlice";
 export const SearchBar = () => {
+
+  const dispatch=useDispatch()
 
   const navigate = useNavigate()
   const searchRef = useRef()
 
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate(`/products?q=${searchRef.current.value}`)
-    
+    navigate(`/products`)
+    dispatch(search(searchRef.current.value))
+    // navigate(`/products?q=${searchRef.current.value}`)
+
   }
 
 

@@ -12,6 +12,7 @@ export const SideCart = ({sideCart , setSideCart}) => {
 
   const products=useSelector(state=> state.cartState.cartList)
   const total = useSelector(state=> state.cartState.total)
+  const allProducts= useSelector(state=> state.c)
 
   return (
 

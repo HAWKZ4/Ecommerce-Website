@@ -1,19 +1,26 @@
-import { useState, useEffect } from "react";
-
 import { ProductCartF } from "../../../components/Elements";
+import { useSelector } from "react-redux";
 
 export const BestSellingProducts = () => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function getProducts() {
-      const response = await fetch("http://localhost:8000/best_selling");
-      const data = await response.json();
-      setProducts(data);
-      console.log(data)
-    }
-    getProducts();
-  },[]);
+
+
+
+  const products = useSelector(state => state.cartState.allProducts)
+
+  const bestSelling = products.filter((product) => product.best_selling)
+  // console.log(bestSelling)
+
+  // useEffect(() => {
+  //   async function getProducts() {
+  //     const response = await fetch("http://localhost:8000/best_selling");
+  //     const data = await response.json();
+  //     setProducts(data);
+  //     console.log(data)
+  //   }
+  //   getProducts();
+  // },[]);
 
   return (
     <div className="bestSellingProducts ">
@@ -21,7 +28,8 @@ export const BestSellingProducts = () => {
         Best Selling Products
       </h1>
       <div className="products flex flex-wrap justify-between">
-        {products.map((product)=>(
+
+        {bestSelling.map((product) => (
           <ProductCartF key={product.id} product={product} />
         ))}
       </div>

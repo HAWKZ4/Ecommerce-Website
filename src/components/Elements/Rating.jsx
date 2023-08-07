@@ -2,11 +2,10 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 export const Rating = ({ rating }) => {
 
-  const roundedRating = Math.round(rating * 2) / 2;
-  const percentage = roundedRating * 20;
-  const fullStars = Math.floor(percentage / 100 * 5);
-  const halfStars = Math.floor((percentage % 100) / 50);
-  const emptyStars = 5 - fullStars - halfStars;
+  const roundedRating = Math.round(rating); // Round down the rating to the nearest whole number
+  const fullStars = Math.min(roundedRating, 5); // Limit the number of full stars to 5
+  const halfStars = rating - roundedRating >= 0.5 ? 1 : 0; // Check if there should be a half star
+  const emptyStars = 5 - fullStars - halfStars; // Calculate the number of empty stars
 
   const stars = [];
   for (let i = 0; i < fullStars; i++) {
