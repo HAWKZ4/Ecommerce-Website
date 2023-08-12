@@ -1,20 +1,23 @@
 import React from "react";
-import s1img from "../../images/S1img.jpg";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-export const SliderForProduct = () => {
+export const SliderForProduct = ({ images }) => {
+
+  
+
   return (
     <Splide
       aria-label="Sliider with sales"
-      options={{ arrows: true, speed: "800" , width: "450px"  }}
+      options={{ arrows: true, speed: "300", width: "450px", pagination: false }}
+      style={{ padding: "20px" }}
     >
       <SplideSlide>
         <div className="img">
           <img
-            src={s1img}
-            className="w-[450px] h-[400px]"
+            src={images}
+            className="w-[450px] h-[400px] p-20"
             alt="girl with sunglasses cover"
           />
         </div>
@@ -22,8 +25,8 @@ export const SliderForProduct = () => {
       <SplideSlide>
         <div className="img">
           <img
-            src={s1img}
-            className="w-[450px] h-[400px]"
+            src={images}
+            className="w-[450px] h-[400px] p-20"
             alt="girl with sunglasses cover"
           />
         </div>

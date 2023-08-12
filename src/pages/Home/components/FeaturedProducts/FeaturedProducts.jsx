@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ProductCartF } from "../../../../components/Elements"
+import { ProductCardF } from "../../../../components/Elements"
 import { Link } from "react-router-dom"
 import "./ProductAni.css"
 import { useSelector } from "react-redux"
@@ -30,7 +30,7 @@ export const FeaturedProducts = () => {
       <div className="products flex flex-wrap justify-between">
 
         {featuredProducts.map((product) => (
-          <ProductCartF key={product.id} product={product} />
+          <ProductCardF key={product.id} product={product} />
 
         ))}
 

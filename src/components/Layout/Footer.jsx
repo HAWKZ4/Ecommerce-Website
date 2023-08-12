@@ -5,6 +5,7 @@ import {
   AiOutlineGoogle,
   AiFillInstagram,
 } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -12,15 +13,14 @@ export const Footer = () => {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
         <div className=" grid grid-cols-4 mx-auto w-full gap-8 max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="mb-6 md:mb-0 ">
-            <a href="#" className="flex items-center">
+            <Link to="/">
               <img
                 src="	https://bazaar.ui-lib.com/assets/images/logo.svg"
-                className="h-8 mr-3 transform scale-150 ml-2.5
-          }"
+                className="inline h-8 mr-3 transform scale-150 ml-2.5 bg-gray-400 p-0.5 rounded-2xl dark:bg-transparent dark:rounded-none dark:p-0 "
                 alt="Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
-            </a>
+              {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span> */}
+            </Link>
             <div className=" mt-10 dark:text-white ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
               libero id et, in gravida. Sit diam duis mauris nulla cursus.

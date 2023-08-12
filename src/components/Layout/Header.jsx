@@ -4,9 +4,12 @@ import { CgDarkMode } from "react-icons/cg";
 import { SearchBar } from "../../pages/Home/components/SearchBar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { UserLoggedOut, SideCart, UserLoggedIn } from "../Elements";
-import { useSelector } from "react-redux";
+import { SideCart, UserLoggedIn } from "../Elements";
+import { useSelector, useDispatch } from "react-redux";
+
+
 import "./Header.css";
+import { updateShowLoginForm } from "../../store/propsSlice";
 
 export const Header = () => {
   // handle Dropdowns
@@ -40,6 +43,12 @@ export const Header = () => {
 
   const token = sessionStorage.getItem("token")
 
+  const dispatch = useDispatch()
+
+  const handleShowLoginForm = () => {
+    dispatch( updateShowLoginForm(true))
+  }
+
 
   return (
     <header className="flex flex-col container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
@@ -69,15 +78,15 @@ export const Header = () => {
 
           </button>
           <div className="relative">
-          <button
-            type="button"
-            className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={() => setLogin(!login)}
-          >
-            <RxAvatar size={20} />
+            <button
+              type="button"
+              className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              onClick={handleShowLoginForm}
+            >
+              <RxAvatar size={20} />
 
-          </button>
-          {login && (token ? <UserLoggedIn setLogin={setLogin}/> : ""  )}
+            </button>
+            {login && (token ? <UserLoggedIn setLogin={setLogin} /> : "")}
           </div>
           <button
             type="button"
@@ -93,7 +102,8 @@ export const Header = () => {
           </button>
         </div>
       </div>
-      {login && (token ? "": <UserLoggedOut setLogin={setLogin} /> )}
+      {/* {login && (token ? "": <UserLoggedOut setLogin={setLogin} /> )} */}
+
 
       {/* Header section 2 */}
       <div className="Header_SEC_2 pt-10 pb-4 flex flex-row items-center justify-between">
@@ -671,7 +681,7 @@ export const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 10 6"
-              
+
             >
               <path
                 stroke="currentColor"

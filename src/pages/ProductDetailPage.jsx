@@ -52,7 +52,7 @@ export const ProductDetailPage = () => {
 
 
   return (
-    <main className=" bg-pro_det_bg pt-4 pb-20">
+    <section className=" bg-pro_det_bg pt-4 pb-20">
       <div className="productDetail flex pt-10  container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="left basis-1/2 flex flex-col">
           <div className="img m-auto text-center">
@@ -158,6 +158,6 @@ export const ProductDetailPage = () => {
           </p>
         </div>
       </div>
-    </main>
+    </section>
   );
 };

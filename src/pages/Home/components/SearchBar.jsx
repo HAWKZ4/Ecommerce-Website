@@ -75,7 +75,7 @@ export const SearchBar = () => {
           </div>
           <div className="relative w-max flex  flex-row">
             <svg // added inline SVG element for logo
-              className="absolute w-5 h-5 text-gray-400 mr-2.5 top-1/2 left-2.5 transform -translate-y-1/2 z-30"
+              className="absolute w-5 h-5 text-gray-400 mr-2.5 top-1/2 left-2.5 transform -translate-y-1/2 z-10"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -89,7 +89,7 @@ export const SearchBar = () => {
               type="text"
               name="search"
               id="search-dropdown"
-              className="pl-10 w-96 relative block p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-l-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              className="pl-10 w-96 relative block p-2.5 z-0 text-sm text-gray-900 bg-gray-50 rounded-l-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
               placeholder="Search"
               required
               ref={searchRef}
@@ -97,7 +97,7 @@ export const SearchBar = () => {
             <button
               id="dropdown-button"
               data-dropdown-toggle="dropdown"
-              className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white rounded-r-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+              className="flex-shrink-0 z-0 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white rounded-r-lg hover:bg-gray-200  focus:outline-none  dark:bg-gray-600 dark:hover:bg-gray-700 "
               type="button"
             >
               All Categories

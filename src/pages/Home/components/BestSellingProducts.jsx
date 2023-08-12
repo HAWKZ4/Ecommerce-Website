@@ -1,4 +1,4 @@
-import { ProductCartF } from "../../../components/Elements";
+import { ProductCardF } from "../../../components/Elements";
 import { useSelector } from "react-redux";
 
 export const BestSellingProducts = () => {
@@ -30,7 +30,7 @@ export const BestSellingProducts = () => {
       <div className="products flex flex-wrap justify-between">
 
         {bestSelling.map((product) => (
-          <ProductCartF key={product.id} product={product} />
+          <ProductCardF key={product.id} product={product} />
         ))}
       </div>
     </div>

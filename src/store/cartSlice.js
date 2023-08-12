@@ -76,6 +76,7 @@ function calculateTotal(cartList) {
   return cartList.reduce(
     (total, item) => total + item.price * item.quantity,
     0
+    
   );
 }
 

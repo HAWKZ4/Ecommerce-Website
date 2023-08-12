@@ -5,7 +5,11 @@ import { Header } from "./components/Layout/Header";
 import { AllRoutes } from "./routes/AllRoutes";
 import { useDispatch, useSelector } from "react-redux";
 import { addAllProductsToCart } from "./store/cartSlice";
-import { addAllProductsToAllProducts, addAllProductsToFiltered } from "./store/filterSlice";
+import {
+  addAllProductsToAllProducts,
+  addAllProductsToFiltered,
+} from "./store/filterSlice";
+import { QuickViewProduct, UserLoggedOutForm } from "./components/Elements";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -21,19 +25,26 @@ const App = () => {
     const response = await fetch(`http://localhost:8000/products`);
     const data = await response.json();
 
-    // Add the quentity property to each item in fetched api
-    const itemsWithQuantity = data.map((item) => ({ ...item, quantity: 1 }));
+    // // Add the quentity property to each item in fetched api
+    // const itemsWithQuantity = data.map((item) => ({ ...item, quantity: 1 }));
+    console.log(data);
 
     const addToStore = () => {
-      dispatch(addAllProductsToCart(itemsWithQuantity));
-      dispatch(addAllProductsToFiltered(itemsWithQuantity));
-      dispatch(addAllProductsToAllProducts(itemsWithQuantity));
-
+      dispatch(addAllProductsToCart(data));
+      dispatch(addAllProductsToFiltered(data));
+      dispatch(addAllProductsToAllProducts(data));
     };
     addToStore();
 
     setIsLoading(false);
   }
+
+  const showQuickViewBox = useSelector(
+    (state) => state.propsState.showQuickViewBox
+  );
+  const showLoginForm = useSelector((state) => state.propsState.showLoginForm);
+  const token = sessionStorage.getItem("token")
+
 
   return (
     <>
@@ -46,6 +57,10 @@ const App = () => {
           <Footer />
         </div>
       )}
+      {showQuickViewBox && (
+        <QuickViewProduct showQuickViewBox={showQuickViewBox} />
+      )}
+      {showLoginForm && (token ? "" : <UserLoggedOutForm />)}
     </>
   );
 };

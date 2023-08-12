@@ -73,7 +73,7 @@ export const ProductsPage = () => {
 
 
   return (
-    <main className="productsPage  container bg-pro_det_bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
+    <div className="productsPage  container bg-pro_det_bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
       <section className="resultDetail bg-white flex flex-row justify-between items-center py-4 px-8">
         <div className="left flex flex-col">
           <p>Searching for “ { } ”</p>
@@ -540,6 +540,6 @@ export const ProductsPage = () => {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
 };
