@@ -15,7 +15,7 @@ export const SideCartItem = ({product}) => {
         <button onClick={()=> dispatch(increaseQuantity(product))} className="inc flex justify-center items-center rounded-full p-1 w-8 h-8 border-2 border-main_c">
           <AiOutlinePlus />
         </button>
-        <div className="text-center text-main_text">
+        <div className="text-center text-main_text font-bold">
           {product.quantity}
         </div>
         <button onClick={()=> dispatch(decreaseQuantity(product))} className="dec flex justify-center items-center rounded-full p-1 w-8 h-8 border-2 border-main_c">

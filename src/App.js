@@ -27,7 +27,7 @@ const App = () => {
 
     // // Add the quentity property to each item in fetched api
     // const itemsWithQuantity = data.map((item) => ({ ...item, quantity: 1 }));
-    console.log(data);
+
 
     const addToStore = () => {
       dispatch(addAllProductsToCart(data));
@@ -60,7 +60,7 @@ const App = () => {
       {showQuickViewBox && (
         <QuickViewProduct showQuickViewBox={showQuickViewBox} />
       )}
-      {showLoginForm && (token ? "" : <UserLoggedOutForm />)}
+      {showLoginForm && (!token ? <UserLoggedOutForm /> : "" )}
     </>
   );
 };

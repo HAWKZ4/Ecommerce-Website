@@ -4,7 +4,7 @@ import { CgDarkMode } from "react-icons/cg";
 import { SearchBar } from "../../pages/Home/components/SearchBar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { SideCart, UserLoggedIn } from "../Elements";
+import { SideCart, UserLoggedInDropdown } from "../Elements";
 import { useSelector, useDispatch } from "react-redux";
 
 
@@ -46,7 +46,13 @@ export const Header = () => {
   const dispatch = useDispatch()
 
   const handleShowLoginForm = () => {
-    dispatch( updateShowLoginForm(true))
+    if (!token) {
+      dispatch(updateShowLoginForm(true))
+      document.body.style.overflow = "hidden"
+    } 
+    if (token) {
+      setLogin(!login)
+    }
   }
 
 
@@ -86,7 +92,8 @@ export const Header = () => {
               <RxAvatar size={20} />
 
             </button>
-            {login && (token ? <UserLoggedIn setLogin={setLogin} /> : "")}
+            {login && token && <UserLoggedInDropdown setLogin={setLogin} />}
+            {/* { token ? <UserLoggedIn setLogin={setLogin} /> : ""} */}
           </div>
           <button
             type="button"

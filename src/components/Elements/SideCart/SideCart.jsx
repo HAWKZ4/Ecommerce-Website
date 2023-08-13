@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { SideCartItem } from "../SideCartItem";
 import "./SideCart.css"
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 
@@ -12,7 +13,7 @@ export const SideCart = ({sideCart , setSideCart}) => {
 
   const products=useSelector(state=> state.cartState.cartList)
   const total = useSelector(state=> state.cartState.total)
-  const allProducts= useSelector(state=> state.c)
+  
 
   return (
 
@@ -38,7 +39,7 @@ export const SideCart = ({sideCart , setSideCart}) => {
       </div>
 
       <div className="buttons flex flex-col px-5">
-      <button className="bg-main_c text-white  py-2 rounded-md" >Checkout Now (${total})</button>
+      <Link to="/cart" className="bg-main_c text-white text-center py-2 rounded-md" >Checkout Now (${total})</Link>
       <button className="bg-white text-main_c my-4 py-2 rounded-md border-main_c border-[1px]  ">View Cart</button>
     </div>
     </div>

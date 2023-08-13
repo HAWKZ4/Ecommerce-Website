@@ -1,5 +1,5 @@
 export { UserLoggedOutForm } from "./UserLoggedOutForm";
-export { UserLoggedIn } from "./UserLoggedIn";
+export { UserLoggedInDropdown } from "./UserLoggedInDropdown";
 export { SideCartItem } from "./SideCartItem";
 export { QuickViewProduct } from "./QuickViewProduct";
 export { SliderForProduct } from "./SliderForProduct";
@@ -8,4 +8,4 @@ export { SideCart } from "./SideCart/SideCart";
 export { ProductCardF } from "./ProductCardF";
 export { Breadcrumb } from "./Breadcrumb";
 export { TotalInfo } from "./TotalInfo";
-
+export { ProductCardCart } from "./ProductCardCart";

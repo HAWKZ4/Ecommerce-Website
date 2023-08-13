@@ -6,10 +6,10 @@ import { toast } from "react-toastify";
 import { addEmail, addName } from "../../store/dataSlice";
 import { updateShowLoginForm } from "../../store/propsSlice";
 
-export const UserLoggedOutForm = ({ setLogin }) => {
+export const UserLoggedOutForm = () => {
 
   const handleSignUp = () => {
-    setLogin(false)
+    dispatch(updateShowLoginForm(false))
   };
 
   const email = useRef()
@@ -38,7 +38,7 @@ export const UserLoggedOutForm = ({ setLogin }) => {
     const response = await fetch("http://localhost:8000/login", requestOptions)
 
     const data = await response.json()
-    { data.accessToken ? (() => { navigate("/products"); setLogin(false); })() : toast.error(data) }
+    { data.accessToken ? <>{navigate("/products")}{dispatch(updateShowLoginForm(false))}{document.body.style.overflow="visible"}</> : toast.error(data) }
 
     if (data.accessToken) {
       sessionStorage.setItem("token", JSON.stringify(data.accessToken))
@@ -52,6 +52,7 @@ export const UserLoggedOutForm = ({ setLogin }) => {
 
   const hideLoginForm=()=>{
     dispatch(updateShowLoginForm(false))
+    document.body.style.overflow="visible"
   }
 
 

@@ -22,10 +22,14 @@ const cartSlice = createSlice({
       return { ...state, total: updatedTotal, cartList: updatedCartList };
     },
     removeProduct(state, action) {
+
+      const product = state.cartList.find(
+        (item) => item.id === action.payload.id
+      );
       const updatedCartList = state.cartList.filter(
         (item) => item.id !== action.payload.id
       );
-      const total = state.total - action.payload.price;
+      const total = state.total - (product.quantity *product.price) ;
       const updatedTotal = Number(total.toFixed(2));
       return { ...state, total: updatedTotal, cartList: updatedCartList };
     },
