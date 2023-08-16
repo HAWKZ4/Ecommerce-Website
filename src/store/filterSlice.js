@@ -17,12 +17,12 @@ const filterSlice = createSlice({
   reducers: {
     addAllProductsToFiltered(state, action) {
       // add all products before filter
-      const allProductsfilterd = action.payload;
+      const allProductsfilterd = action.payload.filter((item)=> item.instagram !== true);
       return { ...state, filteredProducts: allProductsfilterd };
     },
     addAllProductsToAllProducts(state, action) {
       // add all products before filter
-      const allProducts = action.payload;
+      const allProducts = action.payload.filter((item)=> item.instagram !== true);
       return { ...state, allProducts: allProducts };
     },
     sort(state, action) {

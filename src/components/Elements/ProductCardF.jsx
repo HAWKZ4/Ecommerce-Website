@@ -38,7 +38,7 @@ export const ProductCardF = ({ product }) => {
 
   return (
     /* Individual Product */
-    <div className="product basis-[24%] overflow-hidden ">
+    <div className="product basis-[24%] overflow-hidden  ">
       <div className="  bg-white relative shadow dark:bg-gray-800  ">
         {/* {/*max-w-sm*/}
         <Link to={`/product/${id}`}>

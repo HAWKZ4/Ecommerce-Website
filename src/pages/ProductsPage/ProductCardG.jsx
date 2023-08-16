@@ -33,7 +33,7 @@ export const ProductCardG = ({ product }) => {
 
   return (
     <div className="productCardG mb-6 flex bg-white relative shadow-md rounded-md overflow-hidden  ">
-      <img src={image} className="w-40 h-[180px] p-4 basis-1/4" alt="img" />
+      <img src={image} className="w-40 h-[180px] p-6 basis-1/4" alt="img" />
       <div className="detail p-8 flex flex-col basis-3/4">
         <Link to={`/product/${id}`}>
           <h5 className="leading-normal text-lg font-semibold">

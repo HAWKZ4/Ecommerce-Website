@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { Footer } from "./components/Layout/Footer";
-import { Header } from "./components/Layout/Header";
+import { useEffect, useState } from "react";
+import { Header,Footer } from "./components/Layout/";
+
 import { AllRoutes } from "./routes/AllRoutes";
 import { useDispatch, useSelector } from "react-redux";
+import { QuickViewProduct, UserLoggedOutForm } from "./components/Elements";
 import { addAllProductsToCart } from "./store/cartSlice";
+import { addInstagramImages } from "./store/imagesSlice";
 import {
   addAllProductsToAllProducts,
   addAllProductsToFiltered,
 } from "./store/filterSlice";
-import { QuickViewProduct, UserLoggedOutForm } from "./components/Elements";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -28,11 +29,11 @@ const App = () => {
     // // Add the quentity property to each item in fetched api
     // const itemsWithQuantity = data.map((item) => ({ ...item, quantity: 1 }));
 
-
     const addToStore = () => {
       dispatch(addAllProductsToCart(data));
       dispatch(addAllProductsToFiltered(data));
       dispatch(addAllProductsToAllProducts(data));
+      dispatch(addInstagramImages(data));
     };
     addToStore();
 
@@ -43,8 +44,7 @@ const App = () => {
     (state) => state.propsState.showQuickViewBox
   );
   const showLoginForm = useSelector((state) => state.propsState.showLoginForm);
-  const token = sessionStorage.getItem("token")
-
+  const token = sessionStorage.getItem("token");
 
   return (
     <>
@@ -60,7 +60,7 @@ const App = () => {
       {showQuickViewBox && (
         <QuickViewProduct showQuickViewBox={showQuickViewBox} />
       )}
-      {showLoginForm && (!token ? <UserLoggedOutForm /> : "" )}
+      {showLoginForm && (!token ? <UserLoggedOutForm /> : "")}
     </>
   );
 };

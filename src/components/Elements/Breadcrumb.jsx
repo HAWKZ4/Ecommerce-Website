@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Breadcrumb = () => {
+export const Breadcrumb = ({ second=false,third=false,fourth=false}) => {
   return (
 
 
@@ -11,15 +11,15 @@ export const Breadcrumb = () => {
           1. Cart
         </Link>
         <li>
-          <div className='w-12 h-1 bg-n_active_main_c'></div>
+          <div className={`w-12 h-1 ${second || third ? "bg-main_c" : "bg-n_active_main_c "} `}></div>
         </li>
-        <Link to="/checkout" className="active select-none cursor-pointer bg-n_active_main_c text-main_c font-semibold rounded-full text-base  inline-flex items-center py-1 px-8">
+        <Link to="/checkout" className={`active select-none cursor-pointer ${second || third ? "bg-main_c text-white" :" bg-n_active_main_c text-main_c"}   font-semibold rounded-full text-base  inline-flex items-center py-1 px-8`}>
           2. Details
         </Link>
         <li>
-          <div className='w-12 h-1 bg-n_active_main_c'></div>
+          <div className={`w-12 h-1 ${ third ? "bg-main_c" :"bg-n_active_main_c" } `}></div>
         </li>
-        <Link to="/payment" className="active select-none cursor-pointer bg-n_active_main_c text-main_c font-semibold rounded-full text-base  inline-flex items-center py-1 px-8" aria-current="page">
+        <Link to="/payment" className={`active select-none cursor-pointer ${third ?"text-white bg-main_c " :"bg-n_active_main_c text-main_c"}  font-semibold rounded-full text-base  inline-flex items-center py-1 px-8`} aria-current="page">
           3. Payments
         </Link>
         <li>

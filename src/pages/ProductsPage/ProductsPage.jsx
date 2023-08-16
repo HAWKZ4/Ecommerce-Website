@@ -10,6 +10,7 @@ import { addAllProducts } from "../../store/cartSlice";
 import { useSelector } from "react-redux";
 import { featureProducts, clearFilter, sort } from "../../store/filterSlice";
 import { rate } from "../../store/filterSlice";
+import { ProductsSection } from "../../components/Elements/ProductsSection";
 
 
 export const ProductsPage = () => {
@@ -535,9 +536,7 @@ export const ProductsPage = () => {
         <div className="productList basis-3/4 h-fit   ">
           {/* Product */}
 
-          {products.map((product) => (
-            <ProductCardG key={product.id} product={product} />
-          ))}
+          <ProductsSection/>
         </div>
       </div>
     </div>

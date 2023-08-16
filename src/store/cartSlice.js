@@ -11,7 +11,7 @@ const cartSlice = createSlice({
 
   reducers: {
     addAllProductsToCart(state, action) {
-      const updatedCartList = action.payload;
+      const updatedCartList = action.payload.filter((item)=> item.instagram !== true);
       return { ...state, allProducts: updatedCartList };
     },
 

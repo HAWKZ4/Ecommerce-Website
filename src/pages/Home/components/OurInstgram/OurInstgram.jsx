@@ -10,9 +10,9 @@ export const OurInstgram = () => {
   // manage the products
   // const [products, setProducts] = useState([])
 
-  const products = useSelector(state => state.cartState.allProducts)
+  const products = useSelector(state => state.imagesState.instagramImages)
 
-  const instgramImages= products.filter((product)=> product.instgram)
+  const instgramImages= products.filter((product)=> product.instagram)
 
 
 
