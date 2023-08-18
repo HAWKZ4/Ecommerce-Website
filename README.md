@@ -8,6 +8,8 @@
 ![3](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/1f04d2b4-bdfb-4bf7-b8a7-7a4fb9b00386)
 ![4](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/4b896e1e-b845-4644-80cf-9d5b5e78a649)
 ![5](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/16f7372b-f7f1-4883-9f7a-9e58ce59fc95)
+![6](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/527969b0-47f6-4238-8ffe-d34fff9edce5)
+
 
 # Getting Started with Create React App
 
