@@ -21,12 +21,9 @@ export const ProductsSection = () => {
   const endOffset = itemOffset + itemsPerPage;
 
   const currentItems = products.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(products.length / itemsPerPage);
+  const pageCount = Number(Math.ceil(products.length / itemsPerPage));
 
   // show the next and previous arrows
-
-  console.log("products length = "+products.length)
-  console.log("Items per page = " + itemsPerPage)
 
   useEffect(() => {
     if (products.length <= itemsPerPage) {
@@ -56,7 +53,7 @@ export const ProductsSection = () => {
         nextLabel={showArrows ? " > " : ""}
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
-        pageCount={showArrows ? pageCount : ""}
+        pageCount={showArrows ? pageCount : 0}
         previousLabel={showArrows ?' < ' : ""}
         renderOnZeroPageCount={null}
         containerClassName='pagination'

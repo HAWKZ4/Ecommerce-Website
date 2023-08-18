@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export const ProductDetailPage = () => {
 
-  const products = useSelector(state => state.cartState.cartList)
+  const productsInCart = useSelector(state => state.cartState.cartList)
 
   const [inCartList, setInCartList] = useState(false)
 
@@ -18,7 +18,7 @@ export const ProductDetailPage = () => {
 
   const [product, setProduct] = useState({})
 
-  const { image, title, price, rating = 0, brand, company_name ,id } = product
+  const { image, title, price, rating = 0, brand, company_name, id } = product
 
 
   const dispatch = useDispatch()
@@ -32,20 +32,16 @@ export const ProductDetailPage = () => {
 
   }, [id])
 
-  
+
   useEffect(() => {
-    const isInCartList = products.find(item => item.id === id)
-    console.log(isInCartList)
+    const isInCartList = productsInCart.find(item => item.id === id)
     if (isInCartList) {
       setInCartList(true)
-      console.log(inCartList)
     } else {
       setInCartList(false)
-      console.log(inCartList)
-
     }
 
-  }, [products, id])
+  }, [productsInCart, id])
 
 
 

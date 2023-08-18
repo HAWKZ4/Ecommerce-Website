@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 import "./Header.css";
-import { updateShowLoginForm } from "../../store/propsSlice";
+import { updateShowLoginForm, updateShowSideCart } from "../../store/propsSlice";
 
 export const Header = () => {
   // handle Dropdowns
@@ -55,10 +55,16 @@ export const Header = () => {
     }
   }
 
+  const showSideCart= useSelector(state=>state.propsState.showSideCart)
+
+  const handleShowSideCart=()=>{
+    dispatch(updateShowSideCart(true))
+    document.body.style.overflow="hidden"
+  }
 
   return (
     <header className="flex flex-col container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
-      <SideCart sideCart={sideCart} setSideCart={setSideCart} />
+      {/* <SideCart sideCart={sideCart} setSideCart={setSideCart} /> */}
       <div className="header flex flex-row justify-between items-center">
         <div className="logo">
           <Link to="/">
@@ -76,7 +82,7 @@ export const Header = () => {
         <div className="icons flex w-48 justify-between">
           <button
             type="button"
-            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => setDarkMode(!darkMode)}
           >
             <CgDarkMode size={20} />
@@ -86,7 +92,7 @@ export const Header = () => {
           <div className="relative">
             <button
               type="button"
-              className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               onClick={handleShowLoginForm}
             >
               <RxAvatar size={20} />
@@ -97,8 +103,8 @@ export const Header = () => {
           </div>
           <button
             type="button"
-            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={() => setSideCart(!sideCart)}
+            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onClick={handleShowSideCart}
           >
             <MdOutlineShoppingBag size={20} />
 
@@ -420,7 +426,7 @@ export const Header = () => {
                 id="mega-menu-full-dropdown"
                 className="fullScreenMenuDrop mt-1 hidden  bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600"
               >
-                <div className="grid max-w-screen-xl bg-white z-10 w-[1200px] absolute transform -translate-x-1/2 left-1/2 top-[40px] px-4 py-5 mx-auto  text-gray-900 dark:bg-[#374151] dark:text-white hover:bg-gray-100  dark:hover:text-whitesm:grid-cols-2 md:grid-cols-3 md:px-6">
+                <div className="grid max-w-screen-xl bg-white z-10 w-[1200px] absolute left-1/2 -translate-x-1/2  top-[40px] px-4 py-5 mx-auto  text-gray-900 dark:bg-[#374151] dark:text-white hover:bg-gray-100  dark:hover:text-whitesm:grid-cols-2 md:grid-cols-3 md:px-6">
                   {/* dark:hover:bg-gray-600 */}
                   <ul aria-labelledby="mega-menu-full-dropdown-button">
                     <li>

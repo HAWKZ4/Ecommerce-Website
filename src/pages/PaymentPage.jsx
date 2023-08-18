@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Breadcrumb, TotalInfo } from '../components/Elements'
+import { Link } from 'react-router-dom'
 
 export const PaymentPage = () => {
 
@@ -82,9 +83,13 @@ export const PaymentPage = () => {
               </div>
             </div>
 
-
+            <div className='flex gap-x-10 mb-8'>
+              <Link to="/checkout" className='block basis-[48%] text-center w-full text-main_c bg-transparent border-[1px] font-semibold border-border_c_b_b_a rounded-md  py-1.5 '>Back to Checkout Details</Link>
+              <button className='basis-[48%] text-center w-full text-white bg-main_c border-[1px] font-semibold border-border_c_b_b_a rounded-md  py-1.5 '>Proceed to Payment</button>
+            </div>
           </div>
-          <TotalInfo input={true} button={true} />
+
+          <TotalInfo />
 
 
 

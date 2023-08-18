@@ -24,12 +24,25 @@ export const DropDownWithSearch = () => {
   return (
     <div className=" flex justify-center items-center my-2 ">
       <Select
-        className="basic-single w-full "
+        className="basic-single w-full z-30 "
         classNamePrefix="Country"
         isClearable={true}
         isSearchable={true}
         name="color"
         options={options}
+        styles={{
+          
+          input: (provided) => ({
+            ...provided,
+            height: '38.6px', // Adjust the height value as per your requirement
+            
+          }),
+          control: (provided) => ({
+            ...provided,
+            borderRadius: '8px', // Adjust the border radius value as per your requirement
+          }),
+        }}
+        placeholder="Country"
       />
 
       <div

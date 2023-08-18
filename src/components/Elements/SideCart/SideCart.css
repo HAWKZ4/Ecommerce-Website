@@ -4,3 +4,6 @@
   
   scrollbar-width: none;
 }
+.splide__pagination {
+  z-index: 0; /* Decrease the z-index value as per your requirement */
+}

@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 py-10 ">
+    <footer className="bg-[#222935] dark:bg-gray-900 py-10 ">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
-        <div className=" grid grid-cols-4 mx-auto w-full gap-8 max-w-screen-xl p-4 py-6 lg:py-8">
+      <div className=" grid mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="mb-6 md:mb-0 ">
             <Link to="/">
               <img
@@ -21,7 +21,7 @@ export const Footer = () => {
               />
               {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span> */}
             </Link>
-            <div className=" mt-10 dark:text-white ">
+            <div className=" mt-10 text-gray-400 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
               libero id et, in gravida. Sit diam duis mauris nulla cursus.
             </div>
@@ -84,10 +84,10 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-6 text-lg font-semibold text-white uppercase ">
               About Us
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-400  font-medium">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Careers
@@ -116,10 +116,10 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-6 text-lg font-semibold text-white uppercase ">
               Customer Care
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-400 dark:text-gray-400 font-medium">
               <li className="mb-4">
                 <a
                   href=""
@@ -163,10 +163,10 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-6 text-lg font-semibold text-white uppercase ">
               Contact Us
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-400 dark:text-gray-400 font-medium">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   70 Washington Square South, New York, NY 10012, United States
@@ -183,20 +183,20 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="flex flex-row gap-4">
-                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
-                  <BiLogoFacebook />
+                <a className="hover:bg-slate-400 hover:text-black  cursor-pointer rounded-full p-2  duration-500">
+                  <BiLogoFacebook size={20}/>
                 </a>
-                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
-                  <CgTwitter />
+                <a className="hover:bg-slate-400 hover:text-black  cursor-pointer rounded-full p-2  duration-500">
+                  <CgTwitter size={20} />
                 </a>
-                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
-                  <CgYoutube />
+                <a className="hover:bg-slate-400 hover:text-black  cursor-pointer rounded-full p-2  duration-500">
+                  <CgYoutube size={20} />
                 </a>
-                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
-                  <AiOutlineGoogle />
+                <a className="hover:bg-slate-400 hover:text-black  cursor-pointer rounded-full p-2  duration-500">
+                  <AiOutlineGoogle size={20}/>
                 </a>
-                <a className="hover:bg-slate-400 dark:bg-slate-800 cursor-pointer rounded-full p-2 dark:hover:bg-[#212733] duration-500">
-                  <AiFillInstagram />
+                <a className="hover:bg-slate-400 hover:text-black  cursor-pointer rounded-full p-2  duration-500">
+                  <AiFillInstagram size={20}/>
                 </a>
               </li>
             </ul>

@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { featureProducts, clearFilter, sort } from "../../store/filterSlice";
 import { rate } from "../../store/filterSlice";
 import { ProductsSection } from "../../components/Elements/ProductsSection";
+import { updateSearchDetail } from "../../store/propsSlice";
 
 
 export const ProductsPage = () => {
@@ -57,27 +58,31 @@ export const ProductsPage = () => {
     radios.forEach(function (radio) {
       radio.checked = false
     })
+    dispatch(updateSearchDetail(""))
   }
 
-  const handleLowToHigh=()=>{
+  const handleLowToHigh = () => {
     dispatch(sort("lowToHigh"))
-    document.getElementById("dropdownButton").textContent=document.getElementById("lowToHigh").textContent
+    document.getElementById("dropdownButton").textContent = document.getElementById("lowToHigh").textContent
     setSortByDropdown(!sortByDropdown)
   }
-  const handleHighToLow=()=>{
+  const handleHighToLow = () => {
     dispatch(sort("highToLow"))
-    document.getElementById("dropdownButton").textContent=document.getElementById("highToLow").textContent
+    document.getElementById("dropdownButton").textContent = document.getElementById("highToLow").textContent
 
     setSortByDropdown(!sortByDropdown)
   }
 
+  const searchDetail = useSelector(state => state.propsState.searchDetail)
 
 
   return (
     <div className="productsPage  container bg-pro_det_bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
       <section className="resultDetail bg-white flex flex-row justify-between items-center py-4 px-8">
         <div className="left flex flex-col">
-          <p>Searching for “ { } ”</p>
+
+          {searchDetail ? <p>Searching for “ { searchDetail } ”</p> : ""}
+
           <p>{filteredProducts.length} results found</p>
         </div>
         <div className="right flex items-center">
@@ -87,7 +92,7 @@ export const ProductsPage = () => {
               <button
                 id="dropdownButton"
                 data-dropdown-toggle="dropdown"
-                className="  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="  text-black bg-white border-[1px] focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex  items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
                 onClick={() => setSortByDropdown(!sortByDropdown)}
               >
@@ -109,48 +114,48 @@ export const ProductsPage = () => {
                 </svg>
               </button>
 
-                <div
-                  id="dropdown"
-                  className={`z-10  ${sortByDropdown ? "block" : "hidden"
-                    } absolute top-[42px] left-1/2 -translate-x-1/2  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
+              <div
+                id="dropdown"
+                className={`z-10  ${sortByDropdown ? "block" : "hidden"
+                  } absolute top-[42px] left-1/2 -translate-x-1/2  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
+              >
+                <ul
+                  className="py-2 text-sm text-gray-700 dark:text-gray-200 text-center"
+                  aria-labelledby="dropdownDefaultButton"
                 >
-                  <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-200 text-center"
-                    aria-labelledby="dropdownDefaultButton"
+                  <li
+                    className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
-                    <li
-                      className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
 
-                      Relevance
+                    Relevance
 
-                    </li>
-                    <li
-                      className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
+                  </li>
+                  <li
+                    className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
 
 
-                      Date
+                    Date
 
-                    </li>
-                    <li
+                  </li>
+                  <li
                     id={"lowToHigh"}
-                      onClick={handleLowToHigh} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
+                    onClick={handleLowToHigh} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
 
-                      Price Low to High
+                    Price Low to High
 
-                    </li>
-                    <li
+                  </li>
+                  <li
                     id={"highToLow"}
-                      onClick={handleHighToLow} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
+                    onClick={handleHighToLow} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
 
-                      Price High to Low
+                    Price High to Low
 
-                    </li>
-                  </ul>
-                </div>
+                  </li>
+                </ul>
+              </div>
               {/* <!-- Dropdown menu --> */}
             </div>
           </div>
@@ -536,7 +541,7 @@ export const ProductsPage = () => {
         <div className="productList basis-3/4 h-fit   ">
           {/* Product */}
 
-          <ProductsSection/>
+          <ProductsSection />
         </div>
       </div>
     </div>

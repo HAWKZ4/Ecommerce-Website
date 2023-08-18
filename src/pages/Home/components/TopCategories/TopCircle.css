@@ -1,6 +1,6 @@
 .Sale:hover .circle {
   transition: all 0.2s ease-in-out;
-  transform: scale(1.1) translateY(-50%);
+  transform: scale(1.2);
   /* top: 38px; */
 }
 

@@ -10,6 +10,7 @@ export const UserLoggedOutForm = () => {
 
   const handleSignUp = () => {
     dispatch(updateShowLoginForm(false))
+    document.body.style.overflow="visible"
   };
 
   const email = useRef()
@@ -57,10 +58,10 @@ export const UserLoggedOutForm = () => {
 
 
   return (
-    <div className="parent fixed top-0 left-0 w-full h-full">
-<div onClick={hideLoginForm} className="overlay absolute bg-black w-full h-full top-0 left-0 opacity-50 z-10"></div>
+    <div className="parent  top-0 left-0 w-full h-full">
+<div onClick={hideLoginForm} className="overlay absolute bg-black w-full h-full top-0 left-0 opacity-50 z-20"></div>
 
-    <form onSubmit={handleLogin} className="w-1/3 h-[500px] pt-8 pb-20 px-10 bg-white z-10  fixed top-1/2 left-1/2 tranfsorm -translate-x-1/2 -translate-y-1/2 rounded-lg dark:bg-gray-400">
+    <form onSubmit={handleLogin} className="w-1/3 h-[500px] pt-8 pb-20 px-10 bg-white z-30  fixed top-1/2 left-1/2 tranfsorm -translate-x-1/2 -translate-y-1/2 rounded-lg dark:bg-gray-400">
       <div className="intro flex flex-col justify-center items-center mb-6">
         <img
           className="w-14 mb-4"

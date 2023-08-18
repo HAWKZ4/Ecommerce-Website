@@ -7,6 +7,7 @@ const cartSlice = createSlice({
     allProducts: [],
     cartList: [],
     total: 0,
+    finalTotal:0
   },
 
   reducers: {
@@ -72,6 +73,9 @@ const cartSlice = createSlice({
     
       return state;
     },
+    updateFinalTotal(state,action) {
+      state.finalTotal = (action.payload + ((5 * (action.payload)/100) + 10)).toFixed(2)
+    }
   },
 });
 
@@ -90,5 +94,6 @@ export const {
   removeProduct,
   increaseQuantity,
   decreaseQuantity,
+  updateFinalTotal
 } = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

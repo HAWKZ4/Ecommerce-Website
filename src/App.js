@@ -1,16 +1,21 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { Header,Footer } from "./components/Layout/";
+import { Header, Footer } from "./components/Layout/";
 
 import { AllRoutes } from "./routes/AllRoutes";
 import { useDispatch, useSelector } from "react-redux";
-import { QuickViewProduct, UserLoggedOutForm } from "./components/Elements";
+import {
+  QuickViewProduct,
+  SideCart,
+  UserLoggedOutForm,
+} from "./components/Elements";
 import { addAllProductsToCart } from "./store/cartSlice";
 import { addInstagramImages } from "./store/imagesSlice";
 import {
   addAllProductsToAllProducts,
   addAllProductsToFiltered,
 } from "./store/filterSlice";
+import { toast } from "react-toastify";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -43,6 +48,7 @@ const App = () => {
   const showQuickViewBox = useSelector(
     (state) => state.propsState.showQuickViewBox
   );
+  const showSideCart = useSelector((state) => state.propsState.showSideCart);
   const showLoginForm = useSelector((state) => state.propsState.showLoginForm);
   const token = sessionStorage.getItem("token");
 
@@ -61,6 +67,10 @@ const App = () => {
         <QuickViewProduct showQuickViewBox={showQuickViewBox} />
       )}
       {showLoginForm && (!token ? <UserLoggedOutForm /> : "")}
+
+      {/* <SideCart/> */}
+      {showSideCart ? <SideCart /> : ""}
+      
     </>
   );
 };

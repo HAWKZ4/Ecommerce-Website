@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct, removeProduct } from "../../store/cartSlice";
 import { BsFillCartXFill } from "react-icons/bs";
 import { setProductDetail, updateShowQuickViewBox } from "../../store/propsSlice";
+import { toast } from "react-toastify"
 
 
 
@@ -30,8 +31,16 @@ export const ProductCardF = ({ product }) => {
 
   const showQuickViewBox = () => {
     dispatch(updateShowQuickViewBox(true))
-    document.body.style.overflow="hidden"
+    document.body.style.overflow = "hidden"
     dispatch(setProductDetail(product))
+  }
+
+  const handleAddProduct = () => {
+    dispatch(addProduct(product))
+    toast.success('Added to Cart', {
+
+    });
+
   }
 
 
@@ -43,7 +52,7 @@ export const ProductCardF = ({ product }) => {
         {/* {/*max-w-sm*/}
         <Link to={`/product/${id}`}>
           <img
-            className="imgPro h-[213.8px] w-full duration-500 p-6 rounded-t-lg"
+            className="imgPro h-[250px] w-full duration-500 p-10 rounded-t-lg"
             src={image}
             alt="product image"
           />
@@ -53,7 +62,7 @@ export const ProductCardF = ({ product }) => {
         </div>
         {inCartList ? (<div onClick={() => dispatch(removeProduct(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
           <BsFillCartXFill />
-        </div>) : (<div onClick={() => dispatch(addProduct(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
+        </div>) : (<div onClick={handleAddProduct} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
           <LiaCartPlusSolid />
         </div>)}
 

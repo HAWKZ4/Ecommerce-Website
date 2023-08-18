@@ -7,13 +7,15 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "./index.css";
 import App from "./App";
+import { ScrollToTop } from "./components/Others/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
     <Provider store={store}>
       <React.StrictMode>
-        <ToastContainer autoClose={3000} position={"bottom-right"} draggable/>
+        <ScrollToTop/>
+        <ToastContainer theme="colored" hideProgressBar="true" autoClose={3000} position={"bottom-right"} draggable/>
         <App />
       </React.StrictMode>
     </Provider>

@@ -9,7 +9,7 @@ import { TopCategoriesButton } from "./TopCategoriesButton";
 export const TopCategories = () => {
   return (
     <div className="topCategories">
-      <h1 className="pt-10 pb-5 text-center text-2xl dark:text-white font-semibold">
+      <h1 className="pt-10 pb-12 text-center text-2xl dark:text-white font-semibold">
         Top Categories
       </h1>
       <div className="Categories flex flex-row justify-between">
@@ -17,7 +17,7 @@ export const TopCategories = () => {
           <div className="product  ">
             <div className="shadow relative flex justify-center ">
               <img
-                className="p-1 h-[500px] "
+                className="p-1 h-[580px] "
                 src={paddedClothes}
                 alt="product image"
               />
@@ -36,11 +36,11 @@ export const TopCategories = () => {
             </div>
           </div>
         </div>
-        <div className="right flex flex-col justify-between basis-[48%]">
+        <div className="right flex flex-col justify-between basis-[48%] gap-5">
           <div className="productT  relative ">
             <div className="shadow">
               <img
-                className="p-1  h-[240px] w-full object-cover"
+                className="p-1  h-[280px] w-full object-cover"
                 src={womentT}
                 alt="product image"
               />
@@ -52,7 +52,7 @@ export const TopCategories = () => {
           <div className="productB relative ">
             <div className="shadow">
               <img
-                className="p-1  h-[240px] w-full  "
+                className="p-1  h-[280px] w-full  "
                 src={menT}
                 alt="product image"
               />
@@ -65,10 +65,10 @@ export const TopCategories = () => {
       </div>
       {/* F */}
       <div className="Sale my-5">
-        <div className="h-[200px] img relative">
+        <div className="h-[220px] img relative">
           {/* <div className="overlay opacity"></div> */}
           <img
-            className="h-[200px] w-full "
+            className="h-[220px] w-full "
             src={bannerBackground}
             alt="girl image"
           />
@@ -78,24 +78,27 @@ export const TopCategories = () => {
               <div>
                 <hr className="bg-white " />
               </div>
-              <p className="leading-none text-[75px]">SALE</p>
+              <p className="leading-none font-bold text-[75px]">SALE</p>
             </div>
-            <div className="circle leading-tight  border-black border-2 text-lg rounded-full w-28 h-28 absolute top-1/2 -translate-y-1/2 left-60 flex flex-col justify-center items-center">
+            <div className="container_circle absolute top-1/2 -translate-y-1/2 left-64">
+            <div className="circle leading-tight  border-black border-2 text-lg rounded-full w-32 h-32  flex flex-col justify-center items-center">
               <div className="content transform -rotate-[20deg]">
-                <div className="text-white text-center text-[14px] font-semibold">
+                <div className="text-white text-center text-base font-semibold">
                   AT UP TO
                 </div>
                 <div>
-                  <span className="text-[28px] text-[#D23F57] font-bold mr-1">
+                  <span className="text-3xl text-[#D23F57] font-bold mr-1">
                     50% 
                   </span>
-                  <span className="text-white text-[14px] font-semibold ">
+                  <span className="text-white text-base font-semibold ">
                     OFF
                   </span>
                 </div>
               </div>
             </div>
           </div>
+          </div>
+
         
       </div>
     </div>

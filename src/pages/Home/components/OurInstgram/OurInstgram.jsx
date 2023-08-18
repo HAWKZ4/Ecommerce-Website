@@ -28,7 +28,7 @@ export const OurInstgram = () => {
 
   return (
     <div className="ourInstgram mb-10">
-      <h1 className="pt-10 pb-6 text-center text-2xl dark:text-white font-semibold">
+      <h1 className="pt-10 pb-12  text-center text-2xl dark:text-white font-semibold">
         Our Instagram
       </h1>
       <div className="instgramBoxes grid grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-3">
