@@ -5,7 +5,7 @@ import { ProductsPage } from '../pages'
 import { Navigate } from 'react-router-dom'
 
 export const ProtectedRoutes = ({ children }) => {
-  const token = JSON.parse(localStorage.getItem("token"))
+  const token = JSON.parse(sessionStorage.getItem("token"))
 
   const dispatch = useDispatch()
 
