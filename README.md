@@ -3,7 +3,7 @@
 
 ## Some pictures of this project
 
-![1](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/5a7c15a7-32e0-429a-9ec5-4f83614e7749)
+![1](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/f0d4d063-adcd-490b-8b7b-1b5287868a65)
 ![2](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/ea7035cb-45b2-4893-b58c-6a11b6e33125)
 ![3](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/85b7b8f9-4d38-44fb-8ae5-d99057bca4b4)
 ![4](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/fe7d7070-0dad-494d-a010-425247d8503e)
