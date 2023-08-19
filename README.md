@@ -1,4 +1,4 @@
-![5](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/0dfddf69-0403-4f0d-a561-6c34ad7210a4)![2](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/4eb2285a-2a17-4de7-a686-e3157eab3f91)# Full E-Commerce Website
+# Full E-Commerce Website
 # This project not ready for use , it's under development.
 
 ## Some pictures of this project
