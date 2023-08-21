@@ -4,18 +4,29 @@
 ## Some pictures of this project
 
 ![1](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/8b960b05-4246-4aac-8130-29f959463531)
+
 ![2](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/ad02c4bb-649e-4022-acdb-2aca2f638baf)
+
 ![3](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/2fde77da-9b16-4791-923f-6a1eebd2b595)
+
 ![4](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/507d1fdc-d2e1-4a35-9b06-88e50a90788e)
+
 ![5](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/12ce0ef3-b7f5-4619-9dfe-0ab1915ad481)
+
 ![7](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/00a0c188-7e0a-4470-9d76-721cd6888de2)
+
 ![2](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/ea7035cb-45b2-4893-b58c-6a11b6e33125)
+
 ![3](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/85b7b8f9-4d38-44fb-8ae5-d99057bca4b4)
+
 ![4](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/fe7d7070-0dad-494d-a010-425247d8503e)
-![5](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/1fa5e2ff-b6e2-484d-958e-72792ed82449)
+
 ![6](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/238480cb-3775-4496-8804-cdc9a528effc)
+
 ![7](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/6a181a0d-d95f-4595-93c1-920c3e272321)
+
 ![8](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/70795c1c-a1d7-4d0c-81cb-641ee0260088)
+
 ![9](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/0e40f7e1-0aac-4a57-9543-7dd197f20fba)
 
 
