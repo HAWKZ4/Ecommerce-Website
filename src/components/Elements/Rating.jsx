@@ -1,6 +1,6 @@
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
-export const Rating = ({ rating }) => {
+export const Rating = ({ rating, ratingCount = false }) => {
 
   const roundedRating = Math.round(rating); // Round down the rating to the nearest whole number
   const fullStars = Math.min(roundedRating, 5); // Limit the number of full stars to 5
@@ -19,10 +19,12 @@ export const Rating = ({ rating }) => {
   }
 
   return (
-    <div className="star-rating flex">
+    <div className="star-rating flex justify-center items-center ">
       {stars.map((star, index) => (
         <span key={index}>{star}</span>
       ))}
+      {ratingCount && (<span className='ml-3 font-semibold'>({ratingCount})</span>)}
+
     </div>
   );
 }

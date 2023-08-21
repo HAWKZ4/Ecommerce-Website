@@ -33,23 +33,23 @@ export const ProductCardCart = ({ product }) => {
   const dispatch = useDispatch()
 
   return (
-    <div className="productCardG mb-6 flex bg-white relative shadow-lg rounded-lg overflow-hidden  ">
+    <div className="productCardG mb-6 flex bg-white dark:bg-gray-900 relative shadow-lg rounded-lg overflow-hidden  ">
       <img src={image} className="w-40 h-[162.6px] p-8 basis-1/4" alt="img" />
       <div className="detail p-8 flex flex-col basis-3/4">
         <Link to={`/product/${id}`}>
-          <h5 className="leading-normal text-lg font-semibold">
+          <h5 className="leading-normal text-lg font-semibold dark:text-white">
             {title}
           </h5>
         </Link>
 
-        <div className="price&BougthTimes my-2">
+        <div className="price&BougthTimes my-3">
         <span className="text-base text-off mr-3">${price.toFixed(2)} x {product.quantity}</span>
-        <span className="text-base total text-main_c mt-1 font-semibold">${(product.quantity*price).toFixed(2)} </span>
+        <span className="text-base total text-main_c dark:text-blue-600 mt-1 font-semibold">${(product.quantity*price).toFixed(2)} </span>
         </div>
         <div className="flex items-center gap-4">
-          <button onClick={()=> dispatch(decreaseQuantity(product))} className="border-[1px] border-main_c text-main_c p-1.5 rounded-md"><AiOutlineMinus size={18} /></button>
-          <span className="font-bold">{product.quantity}</span>
-          <button onClick={()=> dispatch(increaseQuantity(product))} className="border-[1px] border-main_c text-main_c p-1.5 rounded-md"><AiOutlinePlus size={18} /></button>
+          <button onClick={()=> dispatch(decreaseQuantity(product))} className="border-[1px] border-main_c dark:border-blue-600 text-main_c dark:text-blue-600 p-1.5 rounded-md"><AiOutlineMinus size={18} /></button>
+          <span className="font-bold dark:text-white">{product.quantity}</span>
+          <button onClick={()=> dispatch(increaseQuantity(product))} className="border-[1px] border-main_c dark:border-blue-600 text-main_c dark:text-blue-600 p-1.5 rounded-md"><AiOutlinePlus size={18} /></button>
         </div>
       </div>
     </div>

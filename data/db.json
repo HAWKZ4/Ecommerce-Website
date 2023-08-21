@@ -762,6 +762,90 @@
       "lName": "als",
       "phoneNum": "1231231231",
       "id": 11
+    },
+    {
+      "email": "your.email+fakedata37012@gmail.com",
+      "password": "$2a$10$/QAF.7hc9ag.Dqa3cEbi2OgxPFBbjGaRNw8d8BnegOFvyWSIIaHKa",
+      "conPassword": "2ZDtLRnS_WrmHpP",
+      "fName": "Brook",
+      "lName": "Bernhard",
+      "phoneNum": "1234567890",
+      "id": 12
+    },
+    {
+      "email": "john@example.com",
+      "password": "$2a$10$aPe40SvervhRREotg.yvBOVP1wCjTW9r2eZOOCVBaFvU.mu1o3vde",
+      "name": "john doe",
+      "id": 13
+    },
+    {
+      "email": "jawofiw@gmail.com",
+      "password": "$2a$10$zMg3vqTvoVEqHkyjngxmKuvO4A01XZCr9WfUzp/8yBUT/eT6123P6",
+      "name": "fklsakfajlk",
+      "id": 14
+    },
+    {
+      "email": "your.email+fakedata74834@gmail.com",
+      "password": "$2a$10$9y98dRDgh7hHUDBS9vFtHuyEz4o41nJtLIFEM0/4Di/Ff63aU8Utq",
+      "conPassword": "7jY6EEwlEmH6rLy",
+      "fName": "Fatima",
+      "lName": "Moen",
+      "phoneNum": "7726548657",
+      "id": 15
+    },
+    {
+      "email": "your.email+fakedata66409@gmail.com",
+      "password": "$2a$10$wEEGU/eJjsFqKh6VSZvBQOAmpvrNebuzN5akEKuTK1vwwGupCqoUS",
+      "conPassword": "fnxRw2ZkT1KY9zv",
+      "fName": "Florida",
+      "lName": "Reichert",
+      "phoneNum": "2287407880",
+      "id": 16
+    },
+    {
+      "email": "your.email+fakedata32515@gmail.com",
+      "password": "$2a$10$d3ySXYuKIpzES8i8jCCGCOxWBO6s50JQxJe7oJtW1jO8NDGND7//q",
+      "conPassword": "lt8TPAU0GMATPnW",
+      "fName": "Hayden",
+      "lName": "Bernier",
+      "phoneNum": "2715833537",
+      "id": 17
+    },
+    {
+      "email": "your.email+fakedata19058@gmail.com",
+      "password": "$2a$10$vxmfUS9YZHeG/KM.ohqcQu8U8NLJy4VZdW5UTCM7Nfs03Vf7lYJuy",
+      "conPassword": "ihh8fhz8GD_AkiI",
+      "fName": "Allene",
+      "lName": "Ullrich",
+      "phoneNum": "4977960217",
+      "id": 18
+    },
+    {
+      "email": "your.email+fakedata56166@gmail.com",
+      "password": "$2a$10$8MQk20k3eCZeTgTgnN0RK.9MNvZpz9.jRRqN33nvcw9wV9XRJFMbe",
+      "conPassword": "tV9FH8QBnX264x7",
+      "fName": "Hettie",
+      "lName": "Schoen",
+      "phoneNum": "8721350667",
+      "id": 19
+    },
+    {
+      "email": "your.email+fakedata68079@gmail.com",
+      "password": "$2a$10$OFbjyG0tCjVJjXMROH65euSLxYNpDyuYx7Hrchbh.eIq5u09fnaza",
+      "conPassword": "qYklQY0hkPPwhkT",
+      "fName": "Christiana",
+      "lName": "Ebert",
+      "phoneNum": "9767738408",
+      "id": 20
+    },
+    {
+      "email": "your.email+fakedata20723@gmail.com",
+      "password": "$2a$10$7g/dHUtrsh.fjft4dB9iluK7dvRM6.AvaXSXiJI4PyG3GfLz0owEa",
+      "conPassword": "zSKm_XTh5YHC9B7",
+      "fName": "Isaac",
+      "lName": "Cartwright",
+      "phoneNum": "9445256909",
+      "id": 21
     }
   ]
 }

@@ -5,6 +5,7 @@ import { Header, Footer } from "./components/Layout/";
 import { AllRoutes } from "./routes/AllRoutes";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  Loading,
   QuickViewProduct,
   SideCart,
   UserLoggedOutForm,
@@ -15,10 +16,8 @@ import {
   addAllProductsToAllProducts,
   addAllProductsToFiltered,
 } from "./store/filterSlice";
-import { toast } from "react-toastify";
 
 const App = () => {
-  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const dispatch = useDispatch();
@@ -55,7 +54,7 @@ const App = () => {
   return (
     <>
       {isLoading ? (
-        <div>Loading</div>
+        <Loading />
       ) : (
         <div className="App dark:bg-slate-800 ">
           <Header />
@@ -70,7 +69,6 @@ const App = () => {
 
       {/* <SideCart/> */}
       {showSideCart ? <SideCart /> : ""}
-      
     </>
   );
 };

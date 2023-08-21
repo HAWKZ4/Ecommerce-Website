@@ -37,10 +37,12 @@ export const ProductCardF = ({ product }) => {
 
   const handleAddProduct = () => {
     dispatch(addProduct(product))
-    toast.success('Added to Cart', {
+    toast.success('Added To Cart')
 
-    });
-
+  }
+  const handleRemoveProduct=()=>{
+    dispatch(removeProduct(product))
+    toast.warn('Removed From Cart')
   }
 
 
@@ -48,11 +50,11 @@ export const ProductCardF = ({ product }) => {
   return (
     /* Individual Product */
     <div className="product basis-[24%] overflow-hidden  ">
-      <div className="  bg-white relative shadow dark:bg-gray-800  ">
+      <div className="  bg-white relative shadow dark:bg-transparent  dark:shadow-none ">
         {/* {/*max-w-sm*/}
         <Link to={`/product/${id}`}>
           <img
-            className="imgPro h-[250px] w-full duration-500 p-10 rounded-t-lg"
+            className="imgPro h-[250px] w-full duration-500 pr-14 pl-4 py-6 rounded-t-lg"
             src={image}
             alt="product image"
           />
@@ -60,7 +62,7 @@ export const ProductCardF = ({ product }) => {
         <div className="quickShow absolute hidden bg-[#222222] w-full bottom-0 py-[10px] px-8 hover:bg-[#343434] duration-500 text-center text-white ">
           <p onClick={showQuickViewBox} className="cursor-pointer">Quick View</p>
         </div>
-        {inCartList ? (<div onClick={() => dispatch(removeProduct(product))} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
+        {inCartList ? (<div onClick={handleRemoveProduct} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
           <BsFillCartXFill />
         </div>) : (<div onClick={handleAddProduct} className="cartIcon text-[#ABB0B5] absolute top-0 -right-10 scale-150 m-4 p-0.5 cursor-pointer rounded-full hover:bg-[#DAE0E6]">
           <LiaCartPlusSolid />

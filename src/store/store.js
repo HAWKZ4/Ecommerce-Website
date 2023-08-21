@@ -1,5 +1,4 @@
 import { cartReducer } from "./cartSlice";
-import { dataReducer } from "./dataSlice";
 import { filterReducer } from "./filterSlice";
 import { imagesReducer } from "./imagesSlice";
 import { propsReducer } from "./propsSlice";
@@ -10,7 +9,6 @@ export const store = configureStore({
   reducer:{
     cartState: cartReducer,
     filterState: filterReducer,
-    dataState: dataReducer,
     propsState: propsReducer,
     imagesState: imagesReducer
   }

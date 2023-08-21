@@ -77,9 +77,9 @@ export const ProductsPage = () => {
 
 
   return (
-    <div className="productsPage  container bg-pro_det_bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
-      <section className="resultDetail bg-white flex flex-row justify-between items-center py-4 px-8">
-        <div className="left flex flex-col">
+    <div className="productsPage  container bg-pro_det_bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 dark:bg-gray-800">
+      <section className="resultDetail  bg-white flex flex-row justify-between items-center py-4 px-8 dark:bg-gray-900 dark:text-white">
+        <div className="left flex flex-col ">
 
           {searchDetail ? <p>Searching for “ { searchDetail } ”</p> : ""}
 
@@ -92,7 +92,7 @@ export const ProductsPage = () => {
               <button
                 id="dropdownButton"
                 data-dropdown-toggle="dropdown"
-                className="  text-black bg-white border-[1px] focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex  items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className=" w-[153] text-black bg-white  border-[1px] focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex  items-center dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:border-none"
                 type="button"
                 onClick={() => setSortByDropdown(!sortByDropdown)}
               >
@@ -164,7 +164,7 @@ export const ProductsPage = () => {
             <span className="text-products_c cursor-pointer">
               <BsFillGrid3X3GapFill />
             </span>
-            <span className="text-main_c cursor-pointer">
+            <span className="text-main_c cursor-pointer dark:text-blue-600">
               <FaThList />
             </span>
           </div>
@@ -181,10 +181,10 @@ export const ProductsPage = () => {
 
         <aside
           id="default-sidebar"
-          className=" basis-1/4 top-0 left-0 z-0 w-64 mb-4 transition-transform -translate-x-full sm:translate-x-0"
+          className=" basis-1/4 top-0 left-0 z-0 w-64 mb-4 "
           aria-label="Sidebar"
         >
-          <div className="h-fit px-6 py-4 overflow-y-auto rounded-lg shadow-sm  bg-white flex flex-col gap-4  dark:bg-gray-800">
+          <div className="h-fit px-6 py-4 overflow-y-auto rounded-lg shadow-sm  bg-white flex flex-col gap-4  dark:bg-gray-900">
             <div className="text-black dark:text-white">Categories</div>
             <div className="dropdown">
               <button
@@ -215,10 +215,10 @@ export const ProductsPage = () => {
               <div
                 id="dropdown"
                 className={`z-10 ${bathPrepDropdown ? "block" : "hidden"
-                  }  bg-transparent   w-44 `}
+                  }  bg-transparent   w-full mt-2 `}
               >
                 <ul
-                  className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                  className="py-2 text-sm text-gray-700 dark:text-gray-200 dark:bg-gray-700" 
                   aria-labelledby="dropdownDefaultButton"
                 >
                   <li>

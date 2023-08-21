@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { register } from "../services";
+import { useDispatch } from "react-redux";
 
 
 export const RegisterPage = () => {
 
   const navigate= useNavigate()
+
+  const dispatch= useDispatch()
 
   async function handleRegister(event) {
     event.preventDefault()
@@ -18,18 +22,12 @@ export const RegisterPage = () => {
       phoneNum: event.target.floating_phone.value,
     }
 
-    const requestOptions = {
-      method: "POST",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify(authDetail)
-    }
+    const data= await register(authDetail)
 
-
-    const response = await fetch("http://localhost:8000/register", requestOptions)
-    const data = await response.json()
     data.accessToken ? navigate("/products") : toast.error(data)
-    
-    console.log(data)
+
+   
+
 
   }
 
@@ -47,6 +45,7 @@ export const RegisterPage = () => {
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-main_c peer"
           placeholder=" "
           required
+          autoComplete="off"
         />
         <label
           htmlFor="floating_email"
@@ -96,6 +95,7 @@ export const RegisterPage = () => {
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-main_c peer"
             placeholder=" "
             required
+            autoComplete="off"
           />
           <label
             htmlFor="floating_first_name"
@@ -112,6 +112,8 @@ export const RegisterPage = () => {
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-main_c peer"
             placeholder=" "
             required
+            autoComplete="off"
+
           />
           <label
             htmlFor="floating_last_name"
@@ -131,6 +133,8 @@ export const RegisterPage = () => {
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-main_c peer"
             placeholder=" "
             required
+            autoComplete="off"
+
           />
           <label
             htmlFor="floating_phone"

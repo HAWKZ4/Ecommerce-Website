@@ -4,6 +4,7 @@ import girl from "../images/girlBox.jpg";
 import { useEffect, useState } from "react";
 import { add, addProduct } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 
 export const ProductDetailPage = () => {
@@ -43,114 +44,152 @@ export const ProductDetailPage = () => {
 
   }, [productsInCart, id])
 
+  // const [isActive, setIsActive] = useState(false);
+  const [CurrentActiveOption, setCurrentActiveOption] = useState(1)
+  const [CurrentActveType, setCurrentActiveType] = useState(1)
+
+  const buttons = document.querySelectorAll(".list li button")
+
+  const handleActiveOptionButton = (id) => {
+    setCurrentActiveOption(id)
+  }
+
+  const handleActiveTypeButton = (id) => {
+    setCurrentActiveType(id)
+  }
+
+  // buttons.forEach((button) => {
+  //   button.addEventListener("click", () => {
+  //     buttons.forEach((btn) => {
+  //       btn.classList.remove("active");
+  //     });
+
+  //     button.classList.add("active");
+  //     setIsActive(true)
+
+  //   });
+  // });
+
+  // const handleActiveClass = (e) => {
+  //   // e.target.classList.add("active")
+  // };
+
+
+  const handleAddProduct = () => {
+    dispatch(addProduct(product))
+    toast.success("AddedToCart")
+  }
+
 
 
 
 
   return (
-    <section className=" bg-pro_det_bg pt-4 pb-20">
+    <section className=" bg-pro_det_bg pt-4 pb-20 dark:bg-gray-800">
       <div className="productDetail flex pt-10  container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="left basis-1/2 flex flex-col">
           <div className="img m-auto text-center">
-            <img src={image} className="w-[500px] h-[550px]" />
+            <img src={image} className="w-[400px] h-[350px]" />
           </div>
           <div className="control mt-10 flex gap-4 m-auto items-center">
             <div className="p-4 bg-white rounded-lg cursor-pointer border-main_c border-[1px]">
-              <img src={girl} className="w-14 rounded-sm" />
+              <img src={image} className="w-14 h-14 rounded-sm" />
             </div>
             <div className="p-4 bg-white rounded-lg cursor-pointer border-border_c_na border-[1px]">
-              <img src={girl} className="w-14 rounded-sm" />
+              <img src={image} className="w-14 h-14 rounded-sm" />
             </div>
             <div className="p-4 bg-white rounded-lg cursor-pointer border-border_c_na border-[1px]">
-              <img src={girl} className="w-14 rounded-sm" />
+              <img src={image} className="w-14 h-14 rounded-sm" />
             </div>
           </div>
         </div>
         <div className="right basis-1/2">
-          <h1 className="font-bold text-3xl leading-normal mb-2">
+          <h1 className="font-bold text-main_text text-4xl leading-normal mb-2 dark:text-sec">
             {title}
           </h1>
-          <p>
-            Brand: <span className="font-medium">{brand}</span>
+          <p className="text-main_text dark:text-sec ">
+            Brand: <span className="font-medium  dark:text-white">{brand}</span>
           </p>
-          <div className="flex gap-2 my-2 items-center">
-            Rated:  <Rating rating={rating.rate} />
+          <div className="flex gap-2 my-4 items-center text-main_text dark:text-sec">
+            Rated:  <Rating rating={rating.rate} ratingCount={rating.count} />
           </div>
           <div className="options ">
-            <h6 className=" my-4 font-semibold">Option</h6>
-            <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+            <h6 className=" my-4 font-semibold text-main_text dark:text-sec">Option</h6>
+            <ul className="list flex flex-wrap text-sm font-medium text-center text-main_text  dark:text-main_text">
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 text-white bg-main_c rounded-md active"
-                  aria-current="page"
+                <button
+
+                  className={`inline-block px-5 py-2  bg-btn_bg rounded-md hover:bg-main_c hover:text-white  dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActiveOption === 1 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveOptionButton(1)}
                 >
-                  Tab 1
-                </a>
+                  Option 1
+                </button>
               </li>
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 bg-btn_bg rounded-md hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                <button
+                  className={`inline-block px-5 py-2 transition-all duration-300  bg-btn_bg rounded-md hover:bg-main_c hover:text-white dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActiveOption === 2 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveOptionButton(2)}
+
                 >
-                  Tab 2
-                </a>
+                  Option 2
+                </button>
               </li>
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 bg-btn_bg rounded-md hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                <button
+                  className={`inline-block px-5 py-2 transition-all duration-300  bg-btn_bg rounded-md hover:bg-main_c hover:text-white dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActiveOption === 3 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveOptionButton(3)}
                 >
-                  Tab 3
-                </a>
+                  Option 3
+                </button>
               </li>
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 bg-btn_bg rounded-md hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                <button
+                  className={`inline-block px-5 py-2 transition-all duration-300  bg-btn_bg rounded-md hover:bg-main_c hover:text-white  dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActiveOption === 4 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveOptionButton(4)}
                 >
-                  Tab 4
-                </a>
+                  Option 4
+                </button>
               </li>
             </ul>
           </div>
           <div className="type mb-4">
-            <h6 className="my-4 font-semibold">Type</h6>
-            <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+            <h6 className="my-4 font-semibold text-main_text dark:text-sec">Type</h6>
+            <ul className="flex flex-wrap text-sm font-medium text-center text-main_text dark:text-main_text">
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 text-white bg-main_c rounded-md active"
-                  aria-current="page"
+                <button
+                  className={`transition-all duration-300 inline-block px-5 py-2  bg-btn_bg rounded-md hover:bg-main_c hover:text-white  dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActveType === 1 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveTypeButton(1)}
                 >
-                  Tab 1
-                </a>
+                  Type 1
+                </button>
               </li>
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 bg-btn_bg rounded-md hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                <button
+                  className={`transition-all duration-300 inline-block px-5 py-2  bg-btn_bg rounded-md hover:bg-main_c hover:text-white  dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActveType === 2 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveTypeButton(2)}
+
                 >
-                  Tab 3
-                </a>
+                  Type 2
+                </button>
               </li>
               <li className="mr-2">
-                <a
-                  href="#"
-                  className="inline-block px-5 py-2 bg-btn_bg rounded-md hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                <button
+                  className={` transition-all duration-300inline-block px-5 py-2  bg-btn_bg rounded-md hover:bg-main_c hover:text-white  dark:hover:bg-blue-600 dark:hover:text-white ${CurrentActveType === 3 ? "bg-main_c dark:bg-blue-600 text-white" : "dark:text-main_text"}`}
+                  onClick={() => handleActiveTypeButton(3)}
+
                 >
-                  Tab 3
-                </a>
+                  Type 3
+                </button>
               </li>
             </ul>
           </div>
-          <h2 className="text-main_c font-bold  text-[25px]">${price}</h2>
-          <p className="mb-4">Stock Available</p>
-          <button disabled={inCartList} onClick={() => dispatch(addProduct(product))} className={`${inCartList ? "cursor-not-allowed	" : ""} bg-main_c text-white mb-8 px-10 py-2 rounded-md`}>
+          <h2 className="text-main_c font-bold text-3xl my-2 text-[25px] dark:text-blue-600">${price}</h2>
+          <p className="mb-4 text-main_text dark:text-green-500">Stock Available</p>
+          <button disabled={inCartList} onClick={handleAddProduct} className={`${inCartList ? "cursor-not-allowed	" : ""} bg-main_c text-white mb-10 px-10 py-2 rounded-md dark:bg-blue-600`}>
             Add To Cart
           </button>
-          <p>
-            Sold By: <span>{company_name}</span>
+          <p className="text-main_text dark:text-sec">
+            Sold By: <span className="dark:text-white font-semi-bold text-lg">{company_name}</span>
           </p>
         </div>
       </div>

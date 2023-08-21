@@ -26,33 +26,33 @@ export const SideCartItem = ({ product }) => {
   const truncatedText = longText.split(' ').slice(0, 5).join(' ');
 
   return (
-    <div className='sideCartItem h-32 bg-white flex justify-between  pl-6 pr-2 mb-8 items-center border-b-[1px]'>
+    <div className='sideCartItem h-32 bg-white flex dark:bg-gray-800 justify-between  pl-6 pr-2 mb-8 items-center border-b-[1px]'>
       <div className='left flex flex-col basis-1/12 items-center '>
-        <button onClick={() => dispatch(increaseQuantity(product))} className="inc flex justify-center items-center rounded-full p-1 w-8 h-8 border-[1px] border-main_c">
+        <button onClick={() => dispatch(increaseQuantity(product))} className="inc flex justify-center items-center rounded-full dark:text-white p-1 w-8 h-8 border-[1px] border-main_c dark:border-blue-600">
           <AiOutlinePlus />
         </button>
-        <div className="text-center text-main_text font-bold my-1">
+        <div className="text-center text-main_text dark:text-white font-bold my-1">
           {product.quantity}
         </div>
-        <button onClick={() => dispatch(decreaseQuantity(product))} className={`dec  flex justify-center items-center rounded-full p-1 w-8 h-8 border-[1px] ${!isJustOne && "border-main_c"}  ${isJustOne ? "border-gray-400 cursor-default" : ""}`}>
-          <AiOutlineMinus className={`${isJustOne ? "text-gray-400" : ""}`} />
+        <button onClick={() => dispatch(decreaseQuantity(product))} className={`flex justify-center items-center rounded-full dark:text-white p-1 w-8 h-8 border-[1px] ${!isJustOne && "border-main_c dark:border-blue-600"}  ${isJustOne ? "border-gray-400  cursor-default" : ""}`}>
+          <AiOutlineMinus className={`${isJustOne ? "text-gray-400 dark:text-white" : ""}`} />
         </button>
       </div>
       <div className='middle basis-8/12'>
         <div className="product flex">
           <img className=" mr-3 w-[76px] h-[76px]" src={image} alt="productImg" />
           <div className="detail">
-            <h3 className="text-main_text font-semibold text-base">
+            <h3 className="text-main_text font-semibold text-base dark:text-white mb-1">
               {truncatedText}{longText.split(' ').length > 5 && '...'}</h3>
-            <p className="text-xs text-off">${price.toFixed(2)} x {quantity}</p>
-            <p className="total text-main_c mt-1 text-sm font-semibold">${(quantity * price).toFixed(2)} </p>
+            <p className="text-xs font-semibold text-off">${price.toFixed(2)} x {quantity}</p>
+            <p className="total text-main_c dark:text-blue-600 mt-1 text-sm font-bold">${(quantity * price).toFixed(2)} </p>
           </div>
         </div>
       </div>
 
       <div className='right basis-1/12'>
-        <button onClick={() => dispatch(removeProduct(product))} className="close flex rounded-full ml-2  justify-end items-center">
-          <AiOutlineClose />
+        <button onClick={() => dispatch(removeProduct(product))} className="close flex rounded-full ml-2  justify-end items-center dark:text-white">
+          <AiOutlineClose size={20} />
 
         </button>
       </div >

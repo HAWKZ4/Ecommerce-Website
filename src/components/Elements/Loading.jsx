@@ -1,7 +1,6 @@
-import "./TestPage.css"
 import { motion } from "framer-motion"
 
-export const TestPage = () => {
+export const Loading = () => {
 
   return (
     <div className="h-100 w-100 lodaing fixed top-0 right-0 bottom-0 left-0 bg-[#00214d] text-white flex justify-center items-center flex-col z-50">

@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate';
 
 import { useSelector } from 'react-redux';
 import { ProductCardG } from '../../pages/ProductsPage/ProductCardG';
-import "./ProductsSection.css"
+
 
 export const ProductsSection = () => {
 
@@ -40,6 +40,12 @@ export const ProductsSection = () => {
     setItemOffset(newOffset);
   };
 
+// styling for paginate
+
+const pagination= "list-none flex justify-end mr-8 items-center mb-20 text-base gap-2 text-gray-700"
+const page_num="flex justify-center items-center w-[33px] h-[33px] cursor-pointer border border-1 rounded-full bg-transparent font-normal border-lightgray text-center dark:text-white hover:bg-[F2E3E8] "
+const active="border border-rgb-210-63-87 text-rgb-210-63-87 bg-rose-200 dark:bg-blue-600"
+
   return (
     <>
       <div className='products min-h-[1374px] mb-8'>
@@ -56,11 +62,13 @@ export const ProductsSection = () => {
         pageCount={showArrows ? pageCount : 0}
         previousLabel={showArrows ?' < ' : ""}
         renderOnZeroPageCount={null}
-        containerClassName='pagination'
-        pageLinkClassName={showArrows ?'page-num' : ""}
-        previousLinkClassName={showArrows ?'page-num' : ""}
-        nextLinkClassName={showArrows ?'page-num' : ""}
-        activeClassName='active'
+        containerClassName={pagination}
+        pageLinkClassName={showArrows ?page_num : ""}
+        previousLinkClassName={showArrows ?page_num : ""}
+        nextLinkClassName={showArrows ?page_num : ""}
+        activeClassName="active"
+        activeLinkClassName={active}
+        
       />
     </>
   );

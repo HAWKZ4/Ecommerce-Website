@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         main_c: "rgb(210, 63, 87)", // main color for the project
         n_active_main_c: "#FCE9EC", // main color for not active (related to main) and bg for note in cart page
-        sec: "#AEB4BE", // secondary color for text
+        sec: "#AEB4BE", // secondary color for text and dark mode
         off: "#7D879C", // color for offer text and in the sideCart and the filter
         pro_det_bg: "#F6F9FC", // bg color for product detail and products
         main_text: "#2B3445",

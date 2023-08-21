@@ -9,3 +9,4 @@ export { ProductCardF } from "./ProductCardF";
 export { Breadcrumb } from "./Breadcrumb";
 export { TotalInfo } from "./TotalInfo";
 export { ProductCardCart } from "./ProductCardCart";
+export { Loading } from "./Loading";

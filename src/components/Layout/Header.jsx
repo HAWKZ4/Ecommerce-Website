@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
 import { updateShowLoginForm, updateShowSideCart } from "../../store/propsSlice";
 
+
 export const Header = () => {
   // handle Dropdowns
   const [categories, setCategories] = useState(false);
@@ -41,16 +42,16 @@ export const Header = () => {
     }
   }, [darkMode]);
 
-  const token = sessionStorage.getItem("token")
+  // const token = sessionStorage.getItem("token")
 
   const dispatch = useDispatch()
 
   const handleShowLoginForm = () => {
-    if (!token) {
+    if (!sessionStorage.getItem("token")) {
       dispatch(updateShowLoginForm(true))
       document.body.style.overflow = "hidden"
     } 
-    if (token) {
+    if (sessionStorage.getItem("token")) {
       setLogin(!login)
     }
   }
@@ -62,10 +63,13 @@ export const Header = () => {
     document.body.style.overflow="hidden"
   }
 
+  const isDarkModeActive= JSON.parse(localStorage.getItem("dark"))
+
   return (
-    <header className="flex flex-col container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
+    <header className="w-full dark:bg-gray-900">
+    <div className="flex flex-col container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 dark:bg-gray-900">
       {/* <SideCart sideCart={sideCart} setSideCart={setSideCart} /> */}
-      <div className="header flex flex-row justify-between items-center">
+      <div className="header flex flex-row justify-between items-center ">
         <div className="logo">
           <Link to="/">
             <img
@@ -82,7 +86,7 @@ export const Header = () => {
         <div className="icons flex w-48 justify-between">
           <button
             type="button"
-            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-main_c rounded-lg hover:hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => setDarkMode(!darkMode)}
           >
             <CgDarkMode size={20} />
@@ -92,24 +96,24 @@ export const Header = () => {
           <div className="relative">
             <button
               type="button"
-              className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className=" inline-flex items-center p-2 text-sm font-medium text-center text-white bg-main_c rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               onClick={handleShowLoginForm}
             >
               <RxAvatar size={20} />
 
             </button>
-            {login && token && <UserLoggedInDropdown setLogin={setLogin} />}
+            {login && sessionStorage.getItem("token") && <UserLoggedInDropdown setLogin={setLogin} />}
             {/* { token ? <UserLoggedIn setLogin={setLogin} /> : ""} */}
           </div>
           <button
             type="button"
-            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-main_c rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={handleShowSideCart}
           >
             <MdOutlineShoppingBag size={20} />
 
             <span className="sr-only">Notifications</span>
-            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
+            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-green-500 dark:bg-red-600 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
               {products.length}
             </div>
           </button>
@@ -943,7 +947,9 @@ export const Header = () => {
           {/* F */}
         </div>
       </div>
-      <div className="border-b-[1px]"></div>
+      
+    </div>
+      {darkMode ? "" : <hr className="border-b-[1px]"></hr> }
     </header>
   );
 };
