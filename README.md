@@ -1,6 +1,6 @@
 # eCommerce Website MERN Stack App
 
-## This project not ready for use , it's under development.
+### **This project not ready for use , it's under development**
 
 ### Introduction
 Welcome to our eCommerce Website, a fully-featured MERN stack application designed for online shopping.
