@@ -5,7 +5,8 @@
 ### Introduction
 Welcome to our eCommerce Website, a fully-featured MERN stack application designed for online shopping.
 
-![eCommerce](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/d08d9f39-d861-4e8b-afcd-1690873094e2)
+![eCommerce](https://github.com/HAWKZ4/Ecommerce-Website/assets/108879264/7d2670ac-2790-47f4-804f-27a792501b28)
+
 
 ### Features
 User authentication (signup, login, logout, password reset)
