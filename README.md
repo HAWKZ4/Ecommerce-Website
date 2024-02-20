@@ -1,4 +1,6 @@
-### <span style="color: red;">This text is red.</span>
+### Project (Under Development)
+This project is currently under active development.
+Please note that features, documentation, and other aspects of the project may change as development progresses.
 
 # eCommerce Website MERN Stack App
 
