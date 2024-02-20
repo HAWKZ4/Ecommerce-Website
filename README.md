@@ -1,4 +1,4 @@
-### <span style="color: red">This project not ready for use , it's under development</span>
+### <span style="color: red;">This text is red.</span>
 
 # eCommerce Website MERN Stack App
 
